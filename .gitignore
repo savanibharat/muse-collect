@@ -45,3 +45,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.prefs
+.classpath
+*.MF
+target/classes/META-INF/maven/org.decadic/muse-maths/pom.properties
+*.class
