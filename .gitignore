@@ -48,5 +48,5 @@ Temporary Items
 *.prefs
 .classpath
 *.MF
-target/classes/META-INF/maven/org.decadic/muse-maths/pom.properties
+target/
 *.class
