@@ -4,15 +4,15 @@ import java.util.OptionalDouble;
 
 public interface DoubleStatistics {
 
-    public OptionalDouble min();
+	public OptionalDouble min();
 
-    public OptionalDouble max();
+	public OptionalDouble max();
 
-    public OptionalDouble mean();
+	public OptionalDouble mean();
 
-    public OptionalDouble median();
+	public OptionalDouble median();
 
-    public OptionalDouble mode();
+	public OptionalDouble mode();
 
-    public OptionalDouble range();
+	public OptionalDouble range();
 }

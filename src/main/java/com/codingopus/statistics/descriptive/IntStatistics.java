@@ -5,16 +5,16 @@ import java.util.OptionalInt;
 
 public interface IntStatistics {
 
-    public OptionalInt min();
+	public OptionalInt min();
 
-    public OptionalInt max();
+	public OptionalInt max();
 
-    public OptionalDouble mean();
+	public OptionalDouble mean();
 
-    public OptionalDouble median();
+	public OptionalDouble median();
 
-    public OptionalInt mode();
+	public OptionalInt mode();
 
-    public OptionalInt range();
+	public OptionalInt range();
 
 }
