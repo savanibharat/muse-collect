@@ -9,24 +9,35 @@ Let us start with an example of what this library aims in terms of arrays. For e
     * Use Static factory to create an instance. If argument is null NullPointerException is thrown.
         ```
         IntArray intArray0 = IntArray.of(new int[] {});//contains int[] with length 0.
+	assertEquals(0, intArray0.size());
             
         IntArray intArray1 = IntArray.of(1);//contains int[] with value as 1.
-            
+        assertArrayEquals(new int[] { 1 }, intArray1.toArray());
+	
         IntArray intArray2 = IntArray.of(1, 2);//contains int[] with values as 1 and 2.
-            
+        assertArrayEquals(new int[] { 1, 2 }, intArray2.toArray());
+	
         IntArray intArray3 = IntArray.of(1, 2, 3);//contains int[] with values as 1, 2 and 3.
-            
+        assertArrayEquals(new int[] { 1, 2, 3 }, intArray3.toArray());
+	
         IntArray intArray4 = IntArray.of(1, 2, 3, 4);//contains int[] with values as 1, 2, 3 and 4.
-            
+        assertArrayEquals(new int[] { 1, 2, 3, 4 }, intArray4.toArray());
+	
         IntArray intArrayN = IntArray.of(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 });//The specified array in parameter is copied to new array and stored in IntArray.
+	assertArrayEquals(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 }, intArrayN.toArray());
             
         IntArray intArrayColl = IntArray.of(Arrays.asList(1, 2, 3, 4));//The specified list in parameter is copied to new array and stored in IntArray.
+	assertArrayEquals(new int[] { 1, 2, 3, 4 }, intArrayColl.toArray());
             
         IntArray zeros = IntArray.zeros(10);//array of length 10 filled with 0's.
-            
+        assertArrayEquals(new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, values.toArray());
+	
         IntArray ones = IntArray.ones(10);//array of length 10 filled with 1's.
-            
+        assertArrayEquals(new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, values.toArray());
+	
         IntArray values = IntArray.ofValue(-1, 10); //array of length 10 filled with -1's.
+	assertArrayEquals(new int[] { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 }, values.toArray());
+	
         ```
     * Use Static factory for several arrays. 
         ```
