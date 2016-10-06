@@ -263,4 +263,16 @@ Let us start with an example of what this library aims in terms of arrays. For e
 		
 		assertEquals(OptionalInt.of(15), sum);
         ```
+    * Get all non repeating sorted elements and add them with another IntArray. Reverse the result and return.
+        ```
+        IntArray intArray1 = IntArray.of(10, 5, 5, 2, 2, 8);
+	IntArray intArray2 = IntArray.of(1, 2, 3, 4);
+
+	// distinct, sorted, add and reverse.
+	IntArray result = intArray1.distinct()      // 10, 5, 2, 8
+				   				   .sort()          // 2, 5, 8, 10
+				   				   .plus(intArray2) // 3, 7, 11, 14
+				   				   .reverse();      // 14, 11, 7, 3
+	assertArrayEquals(new int[] { 14, 11, 7, 3 }, result.toArray());
+        ```
         
