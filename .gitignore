@@ -50,3 +50,4 @@ Temporary Items
 *.MF
 target/
 *.class
+test-output/
