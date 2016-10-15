@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="52" passed="52">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="437" started-at="2016-10-09T05:54:02Z" finished-at="2016-10-09T05:54:03Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="437" started-at="2016-10-09T05:54:02Z" finished-at="2016-10-09T05:54:03Z">
+      <class name="com.codingopus.java.maths.IntArrayTest">
+        <test-method status="PASS" signature="intArray_VALUE_check()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_VALUE_check" duration-ms="15" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_VALUE_check -->
+        <test-method status="PASS" signature="intArray_addAll()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_addAll" duration-ms="94" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_addAll -->
+        <test-method status="PASS" signature="intArray_add()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_add" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_add -->
+        <test-method status="PASS" signature="intArray_addAll_arrays()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_addAll_arrays" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_addAll_arrays -->
+        <test-method status="PASS" signature="intArray_addAll_intarray()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_addAll_intarray" duration-ms="15" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_addAll_intarray -->
+        <test-method status="PASS" signature="intArray_addAll_with_null()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_addAll_with_null" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at com.codingopus.java.collect.IntArray.lambda$1(IntArray.java:140)
+	at com.codingopus.java.collect.IntArray$$Lambda$1/1234776885.applyAsInt(Unknown Source)
+	at java.util.stream.ReferencePipeline$4$1.accept(ReferencePipeline.java:210)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:512)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:502)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:576)
+	at java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:255)
+	at java.util.stream.IntPipeline.toArray(IntPipeline.java:502)
+	at com.codingopus.java.collect.IntArray.addAll(IntArray.java:140)
+	at com.codingopus.java.maths.IntArrayTest.intArray_addAll_with_null(IntArrayTest.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_addAll_with_null -->
+        <test-method status="PASS" signature="intArray_add_3arrays_distict()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_add_3arrays_distict" duration-ms="16" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_add_3arrays_distict -->
+        <test-method status="PASS" signature="intArray_add_with_index()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_add_with_index" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_add_with_index -->
+        <test-method status="PASS" signature="intArray_clear()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_clear" duration-ms="15" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_clear -->
+        <test-method status="PASS" signature="intArray_contains_intArray()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_contains_intArray" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_contains_intArray -->
+        <test-method status="PASS" signature="intArray_collection()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_collection" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_collection -->
+        <test-method status="PASS" signature="intArray_contains_value()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_contains_value" duration-ms="16" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_contains_value -->
+        <test-method status="PASS" signature="intArray_distinct_sorted_add_reverse()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_distinct_sorted_add_reverse" duration-ms="16" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_distinct_sorted_add_reverse -->
+        <test-method status="PASS" signature="intArray_distinct()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_distinct" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_distinct -->
+        <test-method status="PASS" signature="intArray_divide_with_factor()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_divide_with_factor" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_divide_with_factor -->
+        <test-method status="PASS" signature="intArray_divide_with_intarray_with_different_length()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_divide_with_intarray_with_different_length" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[Arrays must of same size.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: Arrays must of same size.
+	at com.codingopus.java.collect.IntArray.divide(IntArray.java:315)
+	at com.codingopus.java.maths.IntArrayTest.intArray_divide_with_intarray_with_different_length(IntArrayTest.java:237)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_divide_with_intarray_with_different_length -->
+        <test-method status="PASS" signature="intArray_evens()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_evens" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_evens -->
+        <test-method status="PASS" signature="intArray_divide_with_intarray_with_null()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_divide_with_intarray_with_null" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[IntArray must not be null.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: IntArray must not be null.
+	at java.util.Objects.requireNonNull(Objects.java:228)
+	at com.codingopus.java.collect.IntArray.divide(IntArray.java:313)
+	at com.codingopus.java.maths.IntArrayTest.intArray_divide_with_intarray_with_null(IntArrayTest.java:242)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_divide_with_intarray_with_null -->
+        <test-method status="PASS" signature="intArray_divide_with_intarray_with_same_length()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_divide_with_intarray_with_same_length" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_divide_with_intarray_with_same_length -->
+        <test-method status="PASS" signature="intArray_get()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_get" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_get -->
+        <test-method status="PASS" signature="intArray_get_exception()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_get_exception" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <exception class="java.lang.IndexOutOfBoundsException">
+            <message>
+              <![CDATA[Index 100, Size: 4]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IndexOutOfBoundsException: Index 100, Size: 4
+	at com.codingopus.java.collect.IntArray.get(IntArray.java:578)
+	at com.codingopus.java.maths.IntArrayTest.intArray_get_exception(IntArrayTest.java:315)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IndexOutOfBoundsException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_get_exception -->
+        <test-method status="PASS" signature="intArray_indexOf()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_indexOf" duration-ms="16" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_indexOf -->
+        <test-method status="PASS" signature="intArray_hashcode_equals()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_hashcode_equals" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_hashcode_equals -->
+        <test-method status="PASS" signature="intArray_isEmpty()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_isEmpty" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_isEmpty -->
+        <test-method status="PASS" signature="intArray_max()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_max" duration-ms="16" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_max -->
+        <test-method status="PASS" signature="intArray_lastIndexOf()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_lastIndexOf" duration-ms="0" started-at="2016-10-08T22:54:02Z" finished-at="2016-10-08T22:54:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_lastIndexOf -->
+        <test-method status="PASS" signature="intArray_minus_with_factor()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_minus_with_factor" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_minus_with_factor -->
+        <test-method status="PASS" signature="intArray_min()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_min" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_min -->
+        <test-method status="PASS" signature="intArray_minus_with_intarray_with_null()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_minus_with_intarray_with_null" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[IntArray must not be null.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: IntArray must not be null.
+	at java.util.Objects.requireNonNull(Objects.java:228)
+	at com.codingopus.java.collect.IntArray.minus(IntArray.java:242)
+	at com.codingopus.java.maths.IntArrayTest.intArray_minus_with_intarray_with_null(IntArrayTest.java:182)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_minus_with_intarray_with_null -->
+        <test-method status="PASS" signature="intArray_multiply_with_factor()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_multiply_with_factor" duration-ms="16" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_multiply_with_factor -->
+        <test-method status="PASS" signature="intArray_minus_with_intarray_with_same_length()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_minus_with_intarray_with_same_length" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_minus_with_intarray_with_same_length -->
+        <test-method status="PASS" signature="intArray_minus_with_intarray_with_different_length()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_minus_with_intarray_with_different_length" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[Arrays must of same size.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: Arrays must of same size.
+	at com.codingopus.java.collect.IntArray.minus(IntArray.java:244)
+	at com.codingopus.java.maths.IntArrayTest.intArray_minus_with_intarray_with_different_length(IntArrayTest.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_minus_with_intarray_with_different_length -->
+        <test-method status="PASS" signature="intArray_multiply_with_intarray_with_different_length()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_multiply_with_intarray_with_different_length" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[Arrays must of same size.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: Arrays must of same size.
+	at com.codingopus.java.collect.IntArray.multiply(IntArray.java:276)
+	at com.codingopus.java.maths.IntArrayTest.intArray_multiply_with_intarray_with_different_length(IntArrayTest.java:207)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_multiply_with_intarray_with_different_length -->
+        <test-method status="PASS" signature="intArray_multiply_with_intarray_with_null()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_multiply_with_intarray_with_null" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[IntArray must not be null.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: IntArray must not be null.
+	at java.util.Objects.requireNonNull(Objects.java:228)
+	at com.codingopus.java.collect.IntArray.multiply(IntArray.java:274)
+	at com.codingopus.java.maths.IntArrayTest.intArray_multiply_with_intarray_with_null(IntArrayTest.java:212)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_multiply_with_intarray_with_null -->
+        <test-method status="PASS" signature="intArray_multiply_with_intarray_with_same_length()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_multiply_with_intarray_with_same_length" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_multiply_with_intarray_with_same_length -->
+        <test-method status="PASS" signature="intArray_ofValue_check()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_ofValue_check" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_ofValue_check -->
+        <test-method status="PASS" signature="intArray_ones_check()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_ones_check" duration-ms="15" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_ones_check -->
+        <test-method status="PASS" signature="intArray_plus_with_intarray_with_different_length()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_plus_with_intarray_with_different_length" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[Arrays must of same size.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: Arrays must of same size.
+	at com.codingopus.java.collect.IntArray.plus(IntArray.java:215)
+	at com.codingopus.java.maths.IntArrayTest.intArray_plus_with_intarray_with_different_length(IntArrayTest.java:147)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_plus_with_intarray_with_different_length -->
+        <test-method status="PASS" signature="intArray_plus_with_factor()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_plus_with_factor" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_plus_with_factor -->
+        <test-method status="PASS" signature="intArray_plusAll()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_plusAll" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_plusAll -->
+        <test-method status="PASS" signature="intArray_plus_with_intarray_with_null()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_plus_with_intarray_with_null" duration-ms="16" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[IntArray must not be null.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: IntArray must not be null.
+	at java.util.Objects.requireNonNull(Objects.java:228)
+	at com.codingopus.java.collect.IntArray.plus(IntArray.java:213)
+	at com.codingopus.java.maths.IntArrayTest.intArray_plus_with_intarray_with_null(IntArrayTest.java:152)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_plus_with_intarray_with_null -->
+        <test-method status="PASS" signature="intArray_reverse()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_reverse" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_reverse -->
+        <test-method status="PASS" signature="intArray_plus_with_intarray_with_same_length()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_plus_with_intarray_with_same_length" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_plus_with_intarray_with_same_length -->
+        <test-method status="PASS" signature="intArray_shuffle()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_shuffle" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_shuffle -->
+        <test-method status="PASS" signature="intArray_size()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_size" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_size -->
+        <test-method status="PASS" signature="intArray_size_check()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_size_check" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_size_check -->
+        <test-method status="PASS" signature="intArray_sum()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_sum" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_sum -->
+        <test-method status="PASS" signature="intArray_sort()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_sort" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_sort -->
+        <test-method status="PASS" signature="intArray_varargs_check()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_varargs_check" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at java.util.Objects.requireNonNull(Objects.java:203)
+	at com.codingopus.java.collect.IntArray.of(IntArray.java:45)
+	at com.codingopus.java.maths.IntArrayTest.intArray_varargs_check(IntArrayTest.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_varargs_check -->
+        <test-method status="PASS" signature="intArray_toArray()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_toArray" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_toArray -->
+        <test-method status="PASS" signature="intArray_zeros_check()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_zeros_check" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_zeros_check -->
+        <test-method status="PASS" signature="intArray_varargs_check_1()[pri:0, instance:com.codingopus.java.maths.IntArrayTest@b97c004]" name="intArray_varargs_check_1" duration-ms="0" started-at="2016-10-08T22:54:03Z" finished-at="2016-10-08T22:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intArray_varargs_check_1 -->
+      </class> <!-- com.codingopus.java.maths.IntArrayTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -12,7 +12,7 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import com.codingopus.java.collect.IntArray;
+import com.codingopus.collect.IntArray;
 
 /**
  * Calculates min, max, mean, median, mode and range for {@code IntArray}

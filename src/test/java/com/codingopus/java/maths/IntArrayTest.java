@@ -3,12 +3,14 @@ package com.codingopus.java.maths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.OptionalInt;
 
 import static org.testng.Assert.*;
 import org.testng.annotations.Test;
-import static org.testng.internal.junit.ArrayAsserts.*;
 
-import com.codingopus.java.collect.IntArray;
+import com.codingopus.collect.IntArray;
+
+import static org.testng.internal.junit.ArrayAsserts.*;
 
 public class IntArrayTest {
 
@@ -27,6 +29,34 @@ public class IntArrayTest {
 		assertEquals(3, intArray3.size());
 		assertEquals(4, intArray4.size());
 		assertEquals(8, intArrayN.size());
+	}
+
+	@Test
+	public void intArray_VALUE_check() {
+		assertArrayEquals(new int[] {}, intArray0.toArray());
+		assertArrayEquals(new int[] { 1 }, intArray1.toArray());
+		assertArrayEquals(new int[] { 1, 2 }, intArray2.toArray());
+		assertArrayEquals(new int[] { 1, 2, 3 }, intArray3.toArray());
+		assertArrayEquals(new int[] { 1, 2, 3, 4 }, intArray4.toArray());
+		assertArrayEquals(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 }, intArrayN.toArray());
+	}
+
+	@Test
+	public void intArray_zeros_check() {
+		IntArray values = IntArray.zeros(10);
+		assertArrayEquals(new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, values.toArray());
+	}
+
+	@Test
+	public void intArray_ones_check() {
+		IntArray values = IntArray.ones(10);
+		assertArrayEquals(new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, values.toArray());
+	}
+
+	@Test
+	public void intArray_ofValue_check() {
+		IntArray values = IntArray.ofValue(-1, 10);
+		assertArrayEquals(new int[] { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 }, values.toArray());
 	}
 
 	@Test(expectedExceptions = NullPointerException.class)
@@ -302,4 +332,97 @@ public class IntArrayTest {
 		assertEquals(4, intArray2.lastIndexOf(40));
 	}
 
+	@Test
+	public void intArray_sort() {
+		IntArray values = IntArray.of(110, 20, 310, 89).sort();
+		assertArrayEquals(new int[] { 20, 89, 110, 310 }, values.toArray());
+	}
+
+	@Test
+	public void intArray_distinct() {
+		IntArray values = IntArray.of(7, 6, 3, 4, 5, 4, 5).distinct();
+		assertArrayEquals(new int[] { 7, 6, 3, 4, 5 }, values.toArray());
+	}
+
+	@Test
+	public void intArray_reverse() {
+		IntArray values = IntArray.of(1, 2, 3, 4, 5).reverse();
+		assertArrayEquals(new int[] { 5, 4, 3, 2, 1 }, values.toArray());
+	}
+
+	@Test
+	public void intArray_max() {
+		OptionalInt max = IntArray.of(110, 20, 310, 89).max();
+		assertEquals(OptionalInt.of(310), max);
+	}
+
+	@Test
+	public void intArray_min() {
+		OptionalInt min = IntArray.of(110, 20, 310, 89).min();
+		assertEquals(OptionalInt.of(20), min);
+	}
+
+	@Test
+	public void intArray_sum() {
+		OptionalInt sum = IntArray.of(1, 2, 3, 4, 5).sum();
+		assertEquals(OptionalInt.of(15), sum);
+	}
+
+	@Test
+	public void intArray_addAll_arrays() {
+		int[] arr1 = { 1, 2, 3 };
+		int[] arr2 = { 11, 12, 13 };
+		int[] arr3 = { 21, 22, 23 };
+		IntArray values = IntArray.of(arr1, arr2, arr3);
+		assertArrayEquals(new int[] { 1, 2, 3, 11, 12, 13, 21, 22, 23 }, values.toArray());
+	}
+
+	@Test
+	public void intArray_addAll_intarray() {
+		IntArray values1 = IntArray.of(new int[] { 1, 2, 3 });
+		IntArray values2 = IntArray.of(new int[] { 11, 12, 13 });
+		IntArray values3 = IntArray.of(new int[] { 21, 22 });
+		IntArray values = IntArray.of(values1, values2, values3);
+		assertArrayEquals(new int[] { 1, 2, 3, 11, 12, 13, 21, 22 }, values.toArray());
+	}
+
+	@Test
+	public void intArray_add_3arrays_distict() {
+		int[] arr1 = { 1, 1, 2, 2, 3, 7 };
+		int[] arr2 = { 2, 3, 4, 5 };
+
+		IntArray intArray1 = IntArray.of(arr1).distinct();
+		IntArray intArray2 = IntArray.of(arr2).distinct();
+		IntArray intArray = intArray1.plus(intArray2);
+
+		assertArrayEquals(new int[] { 3, 5, 7, 12 }, intArray.toArray());
+
+	}
+
+	@Test
+	public void intArray_distinct_sorted_add_reverse() {
+
+		IntArray intArray1 = IntArray.of(10, 5, 5, 2, 2, 8);
+		IntArray intArray2 = IntArray.of(1, 2, 3, 4);
+
+		// distinct, sorted, add and reverse.
+		IntArray result = intArray1.distinct().sort().plus(intArray2).reverse();
+		assertArrayEquals(new int[] { 14, 11, 7, 3 }, result.toArray());
+	}
+
+	@Test
+	public void intArray_evens() {
+
+		IntArray intArray1 = IntArray.of(10, 5, 5, 2, 2, 8).evens();
+		System.out.println(intArray1);
+
+		IntArray intArray2 = IntArray.of(10, 5, 5, 2, 2, 8).odds();
+		System.out.println(intArray2);
+	}
+
+	@Test
+	public void intArray_shuffle() {
+		IntArray intArray = IntArray.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+		System.out.println(intArray.shuffle());
+	}
 }

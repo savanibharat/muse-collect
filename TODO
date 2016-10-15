@@ -1,0 +1,57 @@
+Matrix operations
+
+Mean(weighted mean), median, mode, standard deviation, 
+https://github.com/savanibharat/String-Arrays-Math/tree/master/src/com/arithmetic
+Complex numbers from effective java.
+
+Copy intarray var args and intbinaryoperator method to long and double.
+Check with intStream.
+
+Math functions should be in different classes. Putting them in IntArray will cause clutter.
+Frequency counter. freq counter merge. Immutable class. static factory of Collection<? extends E>, 
+Map<? extends K, ? extends V>, array(int, long, double), IntArray, LongArray and DoubleArray static factory
+too. Returns a Map<Val, Long>.
+
+http://www.real-statistics.com/excel-capabilities/built-in-statistical-functions/
+http://www.purplemath.com/modules/meanmode.htm
+Univariate, BiVariate, Multi-Variate with IntPredicate and IntBinaryOperator?????WHAT IS THIS, I FORGOT!!
+
+Provide Supplier for IntArray. So it can be passed as () -> IntArrayOf(new int[]{1,2,3,4});
+
+Kth largest
+add(), multiply(), substract()
+return all primes, even, odd, composite numbers. (Inside *Array.java classes.) 
+Also make static  methods to calculate it. It might come handy.
+
+return all numbers that satisfy given criteria i.e IntPredicate.
+
+*Statistics.java classes should have class Like Min, Max, Mean, Median, Mode, Range and not OptionalInt
+Example public Min min();
+min.getMin(); returns Optional* because array might be of length 0.
+
+StatUtils
+
+addAll(index, collection)
+set(index, value) 
+remove(val)
+remove(index)
+removeAll(int[])
+removeAll(Collection)
+
+Prime, Composite, factorial of all numbers,
+Quadratice primes, Square root of al, Mapth.pow(intarray[i], 2),
+Multiple all
+add all
+shuffle
+foreach with int consumer
+fibonacci of all
+reverse sort
+kth largest
+kth smallest
+set operations
+sort by frequency.
+
+
+//Playground
+1) Find all even numbers get their squares
+

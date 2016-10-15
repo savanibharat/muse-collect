@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Default_suite">
+              <span class="suite-name border-passed">Default suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
+                    <span>C:\Users\savanibharat\AppData\Local\Temp\testng-eclipse-84455963\testng-customsuite.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">52 methods,   52 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_VALUE_check">intArray_VALUE_check</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_add">intArray_add</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_addAll">intArray_addAll</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_addAll_arrays">intArray_addAll_arrays</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_addAll_intarray">intArray_addAll_intarray</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_addAll_with_null">intArray_addAll_with_null</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_add_3arrays_distict">intArray_add_3arrays_distict</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_add_with_index">intArray_add_with_index</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_clear">intArray_clear</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_collection">intArray_collection</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_contains_intArray">intArray_contains_intArray</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_contains_value">intArray_contains_value</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_distinct">intArray_distinct</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_distinct_sorted_add_reverse">intArray_distinct_sorted_add_reverse</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_divide_with_factor">intArray_divide_with_factor</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_divide_with_intarray_with_different_length">intArray_divide_with_intarray_with_different_length</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_divide_with_intarray_with_null">intArray_divide_with_intarray_with_null</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_divide_with_intarray_with_same_length">intArray_divide_with_intarray_with_same_length</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_evens">intArray_evens</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_get">intArray_get</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_get_exception">intArray_get_exception</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_hashcode_equals">intArray_hashcode_equals</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_indexOf">intArray_indexOf</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_isEmpty">intArray_isEmpty</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_lastIndexOf">intArray_lastIndexOf</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_max">intArray_max</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_min">intArray_min</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_minus_with_factor">intArray_minus_with_factor</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_minus_with_intarray_with_different_length">intArray_minus_with_intarray_with_different_length</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_minus_with_intarray_with_null">intArray_minus_with_intarray_with_null</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_minus_with_intarray_with_same_length">intArray_minus_with_intarray_with_same_length</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_multiply_with_factor">intArray_multiply_with_factor</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_multiply_with_intarray_with_different_length">intArray_multiply_with_intarray_with_different_length</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_multiply_with_intarray_with_null">intArray_multiply_with_intarray_with_null</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_multiply_with_intarray_with_same_length">intArray_multiply_with_intarray_with_same_length</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_ofValue_check">intArray_ofValue_check</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_ones_check">intArray_ones_check</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_plusAll">intArray_plusAll</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_plus_with_factor">intArray_plus_with_factor</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_plus_with_intarray_with_different_length">intArray_plus_with_intarray_with_different_length</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_plus_with_intarray_with_null">intArray_plus_with_intarray_with_null</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_plus_with_intarray_with_same_length">intArray_plus_with_intarray_with_same_length</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_reverse">intArray_reverse</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_shuffle">intArray_shuffle</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_size">intArray_size</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_size_check">intArray_size_check</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_sort">intArray_sort</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_sum">intArray_sum</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_toArray">intArray_toArray</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_varargs_check">intArray_varargs_check</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_varargs_check_1">intArray_varargs_check_1</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.codingopus.java.maths.IntArrayTest" hash-for-method="intArray_zeros_check">intArray_zeros_check</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.codingopus.java.maths.IntArrayTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_VALUE_check">
+                  </a> <!-- intArray_VALUE_check -->
+                  <span class="method-name">intArray_VALUE_check</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_add">
+                  </a> <!-- intArray_add -->
+                  <span class="method-name">intArray_add</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_addAll">
+                  </a> <!-- intArray_addAll -->
+                  <span class="method-name">intArray_addAll</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_addAll_arrays">
+                  </a> <!-- intArray_addAll_arrays -->
+                  <span class="method-name">intArray_addAll_arrays</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_addAll_intarray">
+                  </a> <!-- intArray_addAll_intarray -->
+                  <span class="method-name">intArray_addAll_intarray</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_addAll_with_null">
+                  </a> <!-- intArray_addAll_with_null -->
+                  <span class="method-name">intArray_addAll_with_null</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_add_3arrays_distict">
+                  </a> <!-- intArray_add_3arrays_distict -->
+                  <span class="method-name">intArray_add_3arrays_distict</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_add_with_index">
+                  </a> <!-- intArray_add_with_index -->
+                  <span class="method-name">intArray_add_with_index</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_clear">
+                  </a> <!-- intArray_clear -->
+                  <span class="method-name">intArray_clear</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_collection">
+                  </a> <!-- intArray_collection -->
+                  <span class="method-name">intArray_collection</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_contains_intArray">
+                  </a> <!-- intArray_contains_intArray -->
+                  <span class="method-name">intArray_contains_intArray</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_contains_value">
+                  </a> <!-- intArray_contains_value -->
+                  <span class="method-name">intArray_contains_value</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_distinct">
+                  </a> <!-- intArray_distinct -->
+                  <span class="method-name">intArray_distinct</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_distinct_sorted_add_reverse">
+                  </a> <!-- intArray_distinct_sorted_add_reverse -->
+                  <span class="method-name">intArray_distinct_sorted_add_reverse</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_divide_with_factor">
+                  </a> <!-- intArray_divide_with_factor -->
+                  <span class="method-name">intArray_divide_with_factor</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_divide_with_intarray_with_different_length">
+                  </a> <!-- intArray_divide_with_intarray_with_different_length -->
+                  <span class="method-name">intArray_divide_with_intarray_with_different_length</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_divide_with_intarray_with_null">
+                  </a> <!-- intArray_divide_with_intarray_with_null -->
+                  <span class="method-name">intArray_divide_with_intarray_with_null</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_divide_with_intarray_with_same_length">
+                  </a> <!-- intArray_divide_with_intarray_with_same_length -->
+                  <span class="method-name">intArray_divide_with_intarray_with_same_length</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_evens">
+                  </a> <!-- intArray_evens -->
+                  <span class="method-name">intArray_evens</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_get">
+                  </a> <!-- intArray_get -->
+                  <span class="method-name">intArray_get</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_get_exception">
+                  </a> <!-- intArray_get_exception -->
+                  <span class="method-name">intArray_get_exception</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_hashcode_equals">
+                  </a> <!-- intArray_hashcode_equals -->
+                  <span class="method-name">intArray_hashcode_equals</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_indexOf">
+                  </a> <!-- intArray_indexOf -->
+                  <span class="method-name">intArray_indexOf</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_isEmpty">
+                  </a> <!-- intArray_isEmpty -->
+                  <span class="method-name">intArray_isEmpty</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_lastIndexOf">
+                  </a> <!-- intArray_lastIndexOf -->
+                  <span class="method-name">intArray_lastIndexOf</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_max">
+                  </a> <!-- intArray_max -->
+                  <span class="method-name">intArray_max</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_min">
+                  </a> <!-- intArray_min -->
+                  <span class="method-name">intArray_min</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_minus_with_factor">
+                  </a> <!-- intArray_minus_with_factor -->
+                  <span class="method-name">intArray_minus_with_factor</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_minus_with_intarray_with_different_length">
+                  </a> <!-- intArray_minus_with_intarray_with_different_length -->
+                  <span class="method-name">intArray_minus_with_intarray_with_different_length</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_minus_with_intarray_with_null">
+                  </a> <!-- intArray_minus_with_intarray_with_null -->
+                  <span class="method-name">intArray_minus_with_intarray_with_null</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_minus_with_intarray_with_same_length">
+                  </a> <!-- intArray_minus_with_intarray_with_same_length -->
+                  <span class="method-name">intArray_minus_with_intarray_with_same_length</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_multiply_with_factor">
+                  </a> <!-- intArray_multiply_with_factor -->
+                  <span class="method-name">intArray_multiply_with_factor</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_multiply_with_intarray_with_different_length">
+                  </a> <!-- intArray_multiply_with_intarray_with_different_length -->
+                  <span class="method-name">intArray_multiply_with_intarray_with_different_length</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_multiply_with_intarray_with_null">
+                  </a> <!-- intArray_multiply_with_intarray_with_null -->
+                  <span class="method-name">intArray_multiply_with_intarray_with_null</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_multiply_with_intarray_with_same_length">
+                  </a> <!-- intArray_multiply_with_intarray_with_same_length -->
+                  <span class="method-name">intArray_multiply_with_intarray_with_same_length</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_ofValue_check">
+                  </a> <!-- intArray_ofValue_check -->
+                  <span class="method-name">intArray_ofValue_check</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_ones_check">
+                  </a> <!-- intArray_ones_check -->
+                  <span class="method-name">intArray_ones_check</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_plusAll">
+                  </a> <!-- intArray_plusAll -->
+                  <span class="method-name">intArray_plusAll</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_plus_with_factor">
+                  </a> <!-- intArray_plus_with_factor -->
+                  <span class="method-name">intArray_plus_with_factor</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_plus_with_intarray_with_different_length">
+                  </a> <!-- intArray_plus_with_intarray_with_different_length -->
+                  <span class="method-name">intArray_plus_with_intarray_with_different_length</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_plus_with_intarray_with_null">
+                  </a> <!-- intArray_plus_with_intarray_with_null -->
+                  <span class="method-name">intArray_plus_with_intarray_with_null</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_plus_with_intarray_with_same_length">
+                  </a> <!-- intArray_plus_with_intarray_with_same_length -->
+                  <span class="method-name">intArray_plus_with_intarray_with_same_length</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_reverse">
+                  </a> <!-- intArray_reverse -->
+                  <span class="method-name">intArray_reverse</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_shuffle">
+                  </a> <!-- intArray_shuffle -->
+                  <span class="method-name">intArray_shuffle</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_size">
+                  </a> <!-- intArray_size -->
+                  <span class="method-name">intArray_size</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_size_check">
+                  </a> <!-- intArray_size_check -->
+                  <span class="method-name">intArray_size_check</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_sort">
+                  </a> <!-- intArray_sort -->
+                  <span class="method-name">intArray_sort</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_sum">
+                  </a> <!-- intArray_sum -->
+                  <span class="method-name">intArray_sum</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_toArray">
+                  </a> <!-- intArray_toArray -->
+                  <span class="method-name">intArray_toArray</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_varargs_check">
+                  </a> <!-- intArray_varargs_check -->
+                  <span class="method-name">intArray_varargs_check</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_varargs_check_1">
+                  </a> <!-- intArray_varargs_check_1 -->
+                  <span class="method-name">intArray_varargs_check_1</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="intArray_zeros_check">
+                  </a> <!-- intArray_zeros_check -->
+                  <span class="method-name">intArray_zeros_check</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+        </div> <!-- panel Default_suite -->
+        <div panel-name="test-xml-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\savanibharat\AppData\Local\Temp\testng-eclipse-84455963\testng-customsuite.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
+  &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.codingopus.java.maths.IntArrayTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test --&gt;
+&lt;/suite&gt; &lt;!-- Default suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Default test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Default_suite');
+function tableData_Default_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(52);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'intArray_addAll')
+data.setCell(0, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(0, 3, 94);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'intArray_distinct_sorted_add_reverse')
+data.setCell(1, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(1, 3, 16);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'intArray_max')
+data.setCell(2, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(2, 3, 16);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'intArray_indexOf')
+data.setCell(3, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(3, 3, 16);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'intArray_multiply_with_factor')
+data.setCell(4, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(4, 3, 16);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'intArray_add_3arrays_distict')
+data.setCell(5, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(5, 3, 16);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'intArray_contains_value')
+data.setCell(6, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(6, 3, 16);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'intArray_plus_with_intarray_with_null')
+data.setCell(7, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(7, 3, 16);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'intArray_clear')
+data.setCell(8, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(8, 3, 15);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'intArray_addAll_intarray')
+data.setCell(9, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(9, 3, 15);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'intArray_VALUE_check')
+data.setCell(10, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(10, 3, 15);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'intArray_ones_check')
+data.setCell(11, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(11, 3, 15);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'intArray_varargs_check')
+data.setCell(12, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(12, 3, 0);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'intArray_add_with_index')
+data.setCell(13, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(13, 3, 0);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'intArray_contains_intArray')
+data.setCell(14, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(14, 3, 0);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'intArray_collection')
+data.setCell(15, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(15, 3, 0);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'intArray_get')
+data.setCell(16, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(16, 3, 0);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'intArray_minus_with_intarray_with_null')
+data.setCell(17, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(17, 3, 0);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'intArray_plus_with_intarray_with_different_length')
+data.setCell(18, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(18, 3, 0);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'intArray_get_exception')
+data.setCell(19, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(19, 3, 0);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'intArray_evens')
+data.setCell(20, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(20, 3, 0);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'intArray_divide_with_intarray_with_null')
+data.setCell(21, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(21, 3, 0);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'intArray_addAll_with_null')
+data.setCell(22, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(22, 3, 0);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'intArray_multiply_with_intarray_with_null')
+data.setCell(23, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(23, 3, 0);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'intArray_plus_with_factor')
+data.setCell(24, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(24, 3, 0);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'intArray_size')
+data.setCell(25, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(25, 3, 0);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'intArray_multiply_with_intarray_with_same_length')
+data.setCell(26, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(26, 3, 0);
+data.setCell(27, 0, 27)
+data.setCell(27, 1, 'intArray_lastIndexOf')
+data.setCell(27, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(27, 3, 0);
+data.setCell(28, 0, 28)
+data.setCell(28, 1, 'intArray_zeros_check')
+data.setCell(28, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(28, 3, 0);
+data.setCell(29, 0, 29)
+data.setCell(29, 1, 'intArray_toArray')
+data.setCell(29, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(29, 3, 0);
+data.setCell(30, 0, 30)
+data.setCell(30, 1, 'intArray_addAll_arrays')
+data.setCell(30, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(30, 3, 0);
+data.setCell(31, 0, 31)
+data.setCell(31, 1, 'intArray_multiply_with_intarray_with_different_length')
+data.setCell(31, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(31, 3, 0);
+data.setCell(32, 0, 32)
+data.setCell(32, 1, 'intArray_size_check')
+data.setCell(32, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(32, 3, 0);
+data.setCell(33, 0, 33)
+data.setCell(33, 1, 'intArray_plusAll')
+data.setCell(33, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(33, 3, 0);
+data.setCell(34, 0, 34)
+data.setCell(34, 1, 'intArray_isEmpty')
+data.setCell(34, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(34, 3, 0);
+data.setCell(35, 0, 35)
+data.setCell(35, 1, 'intArray_divide_with_factor')
+data.setCell(35, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(35, 3, 0);
+data.setCell(36, 0, 36)
+data.setCell(36, 1, 'intArray_reverse')
+data.setCell(36, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(36, 3, 0);
+data.setCell(37, 0, 37)
+data.setCell(37, 1, 'intArray_minus_with_factor')
+data.setCell(37, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(37, 3, 0);
+data.setCell(38, 0, 38)
+data.setCell(38, 1, 'intArray_varargs_check_1')
+data.setCell(38, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(38, 3, 0);
+data.setCell(39, 0, 39)
+data.setCell(39, 1, 'intArray_add')
+data.setCell(39, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(39, 3, 0);
+data.setCell(40, 0, 40)
+data.setCell(40, 1, 'intArray_minus_with_intarray_with_same_length')
+data.setCell(40, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(40, 3, 0);
+data.setCell(41, 0, 41)
+data.setCell(41, 1, 'intArray_distinct')
+data.setCell(41, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(41, 3, 0);
+data.setCell(42, 0, 42)
+data.setCell(42, 1, 'intArray_divide_with_intarray_with_different_length')
+data.setCell(42, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(42, 3, 0);
+data.setCell(43, 0, 43)
+data.setCell(43, 1, 'intArray_divide_with_intarray_with_same_length')
+data.setCell(43, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(43, 3, 0);
+data.setCell(44, 0, 44)
+data.setCell(44, 1, 'intArray_plus_with_intarray_with_same_length')
+data.setCell(44, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(44, 3, 0);
+data.setCell(45, 0, 45)
+data.setCell(45, 1, 'intArray_ofValue_check')
+data.setCell(45, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(45, 3, 0);
+data.setCell(46, 0, 46)
+data.setCell(46, 1, 'intArray_sum')
+data.setCell(46, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(46, 3, 0);
+data.setCell(47, 0, 47)
+data.setCell(47, 1, 'intArray_shuffle')
+data.setCell(47, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(47, 3, 0);
+data.setCell(48, 0, 48)
+data.setCell(48, 1, 'intArray_sort')
+data.setCell(48, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(48, 3, 0);
+data.setCell(49, 0, 49)
+data.setCell(49, 1, 'intArray_minus_with_intarray_with_different_length')
+data.setCell(49, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(49, 3, 0);
+data.setCell(50, 0, 50)
+data.setCell(50, 1, 'intArray_min')
+data.setCell(50, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(50, 3, 0);
+data.setCell(51, 0, 51)
+data.setCell(51, 1, 'intArray_hashcode_equals')
+data.setCell(51, 2, 'com.codingopus.java.maths.IntArrayTest')
+data.setCell(51, 3, 0);
+window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 266 ms</span>
+              <div id="times-div-Default_suite">
+              </div> <!-- times-div-Default_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.codingopus.java.maths.IntArrayTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">intArray_VALUE_check</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_add</span>
+                <span class="method-start">31 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_addAll</span>
+                <span class="method-start">31 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_addAll_arrays</span>
+                <span class="method-start">125 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_addAll_intarray</span>
+                <span class="method-start">125 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_addAll_with_null</span>
+                <span class="method-start">140 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_add_3arrays_distict</span>
+                <span class="method-start">140 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_add_with_index</span>
+                <span class="method-start">156 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_clear</span>
+                <span class="method-start">156 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_collection</span>
+                <span class="method-start">171 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_contains_intArray</span>
+                <span class="method-start">171 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_contains_value</span>
+                <span class="method-start">171 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_distinct</span>
+                <span class="method-start">187 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_distinct_sorted_add_reverse</span>
+                <span class="method-start">187 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_divide_with_factor</span>
+                <span class="method-start">203 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_divide_with_intarray_with_different_length</span>
+                <span class="method-start">203 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_divide_with_intarray_with_null</span>
+                <span class="method-start">218 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_divide_with_intarray_with_same_length</span>
+                <span class="method-start">218 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_evens</span>
+                <span class="method-start">218 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_get</span>
+                <span class="method-start">234 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_get_exception</span>
+                <span class="method-start">234 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_hashcode_equals</span>
+                <span class="method-start">234 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_indexOf</span>
+                <span class="method-start">234 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_isEmpty</span>
+                <span class="method-start">250 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_lastIndexOf</span>
+                <span class="method-start">265 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_max</span>
+                <span class="method-start">265 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_min</span>
+                <span class="method-start">281 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_minus_with_factor</span>
+                <span class="method-start">281 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_minus_with_intarray_with_different_length</span>
+                <span class="method-start">296 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_minus_with_intarray_with_null</span>
+                <span class="method-start">296 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_minus_with_intarray_with_same_length</span>
+                <span class="method-start">296 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_multiply_with_factor</span>
+                <span class="method-start">296 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_multiply_with_intarray_with_different_length</span>
+                <span class="method-start">312 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_multiply_with_intarray_with_null</span>
+                <span class="method-start">328 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_multiply_with_intarray_with_same_length</span>
+                <span class="method-start">328 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_ofValue_check</span>
+                <span class="method-start">328 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_ones_check</span>
+                <span class="method-start">328 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_plusAll</span>
+                <span class="method-start">343 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_plus_with_factor</span>
+                <span class="method-start">343 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_plus_with_intarray_with_different_length</span>
+                <span class="method-start">343 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_plus_with_intarray_with_null</span>
+                <span class="method-start">343 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_plus_with_intarray_with_same_length</span>
+                <span class="method-start">359 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_reverse</span>
+                <span class="method-start">359 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_shuffle</span>
+                <span class="method-start">359 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_size</span>
+                <span class="method-start">375 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_size_check</span>
+                <span class="method-start">375 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_sort</span>
+                <span class="method-start">375 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_sum</span>
+                <span class="method-start">375 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_toArray</span>
+                <span class="method-start">390 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_varargs_check</span>
+                <span class="method-start">390 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_varargs_check_1</span>
+                <span class="method-start">406 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">intArray_zeros_check</span>
+                <span class="method-start">406 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

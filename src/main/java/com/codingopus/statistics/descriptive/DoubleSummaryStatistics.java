@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import com.codingopus.java.collect.DoubleArray;
+import com.codingopus.collect.DoubleArray;
 
 public class DoubleSummaryStatistics implements DoubleStatistics {
 

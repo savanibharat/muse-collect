@@ -72,7 +72,7 @@ public final class Factorial {
 		factorials[30] = THIRTY;
 	}
 
-	public static BigInteger factorial(int n) {
+	public static BigInteger of(int n) {
 
 		if (n >= 0 && n <= 30) {
 			return factorials[n];

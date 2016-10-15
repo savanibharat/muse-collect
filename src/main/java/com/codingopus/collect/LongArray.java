@@ -1,4 +1,4 @@
-package com.codingopus.java.collect;
+package com.codingopus.collect;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,93 +10,93 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 import java.util.Objects;
-import java.util.OptionalInt;
-import java.util.function.IntBinaryOperator;
+import java.util.OptionalLong;
+import java.util.function.LongBinaryOperator;
 import java.util.stream.Collectors;
 
 /**
  * Categorize methods in Static factory, intermediate and terminal operations.
  */
-public final class IntArray {
+public final class LongArray {
 
-	private final int[] elementData;
+	private final long[] elementData;
 
-	private static final IntArray EMPTY_INT_ARRAY = new IntArray(new int[] {});
+	private static final LongArray EMPTY_LONG_ARRAY = new LongArray(new long[] {});
 
-	private IntArray(final int[] input) {
+	private LongArray(final long[] input) {
 		this.elementData = input;
 	}
 
-	public static IntArray of(int a0) {
+	public static LongArray of(long a0) {
 
-		return new IntArray(new int[] { a0 });
+		return new LongArray(new long[] { a0 });
 	}
 
-	public static IntArray of(int a0, int... an) {
+	public static LongArray of(long a0, long... an) {
 
 		Objects.requireNonNull(an);
-		int[] resultant = new int[1 + an.length];
+		long[] resultant = new long[1 + an.length];
 		resultant[0] = a0;
 		int j = 1;
 		for (int i = 0; i < an.length; i++) {
 			resultant[j++] = an[i];
 		}
-		return new IntArray(resultant);
+		return new LongArray(resultant);
 	}
 
-	public static IntArray of(int a[]) {
+	public static LongArray of(long a[]) {
 
 		Objects.requireNonNull(a, "Input array must not be null.");
 
-		int[] result = new int[a.length];
+		long[] result = new long[a.length];
 		System.arraycopy(a, 0, result, 0, a.length);
 
-		return new IntArray(result);
+		return new LongArray(result);
 	}
 
-	public static IntArray of(Collection<? extends Number> c) {
+	public static LongArray of(Collection<? extends Number> c) {
 
 		Objects.requireNonNull(c, "Collection must not be null.");
 
 		if (c.size() == 0) {
-			return EMPTY_INT_ARRAY;
+			return EMPTY_LONG_ARRAY;
 		}
 
-		int[] res = c.stream().mapToInt(val -> val.intValue()).toArray();
+		long[] res = c.stream().mapToLong(val -> val.longValue()).toArray();
 
-		return new IntArray(res);
+		return new LongArray(res);
 	}
 
-	public static IntArray zeros(int length) {
-		return ofValue(0, length);
+	public static LongArray zeros(int length) {
+		return ofValue(0l, length);
 	}
 
-	public static IntArray ones(int length) {
-		return ofValue(1, length);
+	public static LongArray ones(int length) {
+		return ofValue(1l, length);
 	}
 
-	public static IntArray ofValue(int value, int length) {
+	public static LongArray ofValue(long value, int length) {
 
 		if (length < 0) {
 			throw new IllegalArgumentException("Length cannot be negative");
 		}
 
-		int[] result = new int[length];
+		long[] result = new long[length];
 		Arrays.fill(result, value);
 
-		return new IntArray(result);
+		return new LongArray(result);
 	}
 
 	/**
 	 * Appends the specified element to the end of this array.
 	 */
-	public IntArray add(int value) {
+	public LongArray add(long value) {
 
-		int[] tempArray = new int[elementData.length + 1];
+		long[] tempArray = new long[elementData.length + 1];
 		System.arraycopy(elementData, 0, tempArray, 0, elementData.length);
 		tempArray[elementData.length] = value;
 
-		return new IntArray(tempArray);
+		return new LongArray(tempArray);
 	}
 
 	/**
@@ -104,45 +104,45 @@ public final class IntArray {
 	 * Shifts the element currently at that position (if any) and any subsequent
 	 * elements to the right (adds one to their indices).
 	 */
-	public IntArray add(int index, int value) {
+	public LongArray add(int index, long value) {
 
 		if (index > size() || index < 0) {
 			throw new IndexOutOfBoundsException();
 		}
 
-		int[] tempArray = new int[elementData.length + 1];
+		long[] tempArray = new long[elementData.length + 1];
 		System.arraycopy(elementData, 0, tempArray, 0, index);
 		tempArray[index] = value;
 		System.arraycopy(elementData, index, tempArray, index + 1, elementData.length - index);
 
-		return new IntArray(tempArray);
+		return new LongArray(tempArray);
 	}
 
 	/**
 	 * Appends all of the elements in the specified collection to the end of
 	 * this array.
 	 */
-	public IntArray addAll(Collection<? extends Number> c) {
+	public LongArray addAll(Collection<? extends Number> c) {
 
 		Objects.requireNonNull(c);
 
 		if (c.size() == 0)
 			return this;
 
-		int[] tempArray = c.stream().mapToInt(val -> val.intValue()).toArray();
-		return addAll(this, IntArray.of(tempArray));
+		long[] tempArray = c.stream().mapToLong(val -> val.longValue()).toArray();
+		return addAll(this, LongArray.of(tempArray));
 	}
 
-	public LongArray toLongArray() {
+	public IntArray toIntArray() {
 
 		Objects.requireNonNull(elementData);
 
-		long[] longArray = new long[elementData.length];
+		int[] intArray = new int[elementData.length];
 		for (int i = 0; i < elementData.length; i++) {
-			longArray[i] = (long) elementData[i];
+			intArray[i] = (int) elementData[i];
 		}
 
-		return LongArray.of(longArray);
+		return IntArray.of(intArray);
 	}
 
 	public DoubleArray toDoubleArray() {
@@ -157,12 +157,12 @@ public final class IntArray {
 		return DoubleArray.of(doubleArray);
 	}
 
-	public List<Integer> toList() {
+	public List<Long> toList() {
 
-		List<Integer> list = new ArrayList<Integer>();
+		List<Long> list = new ArrayList<Long>();
 
 		for (int i = 0; i < elementData.length; i++) {
-			list.add(Integer.valueOf(elementData[i]));
+			list.add(Long.valueOf(elementData[i]));
 		}
 
 		return Collections.unmodifiableList(list);
@@ -171,116 +171,116 @@ public final class IntArray {
 	/**
 	 * Increments every value by 1.
 	 */
-	public IntArray plusOne() {
+	public LongArray plusOne() {
 
-		int[] tempArray = new int[elementData.length];
+		long[] tempArray = new long[elementData.length];
 		for (int i = 0; i < elementData.length; i++) {
-			tempArray[i] = elementData[i] + 1;
+			tempArray[i] = elementData[i] + 1L;
 		}
 
-		return new IntArray(tempArray);
+		return new LongArray(tempArray);
 	}
 
 	/**
 	 * Increments every value by specified factor.
 	 */
-	public IntArray plus(int factor) {
+	public LongArray plus(long factor) {
 
 		if (factor == 1)
 			return plusOne();
 
-		int[] tempArray = new int[elementData.length];
+		long[] tempArray = new long[elementData.length];
 		for (int i = 0; i < elementData.length; i++) {
 			tempArray[i] = elementData[i] + factor;
 		}
 
-		return new IntArray(tempArray);
+		return new LongArray(tempArray);
 	}
 
 	/**
 	 * Adds every value from this array to value in specified array.
 	 */
-	public IntArray plus(IntArray intArray) {
+	public LongArray plus(LongArray longArray) {
 
-		Objects.requireNonNull(intArray, "IntArray must not be null.");
-		if (elementData.length != intArray.toArray().length) {
+		Objects.requireNonNull(longArray, "LongArray must not be null.");
+		if (elementData.length != longArray.toArray().length) {
 			throw new IllegalArgumentException("Arrays must of same size.");
 		}
 
-		int[] secondArray = intArray.toArray();
-		int[] tempArray = new int[elementData.length];
+		long[] secondArray = longArray.toArray();
+		long[] tempArray = new long[elementData.length];
 		for (int i = 0; i < elementData.length; i++) {
 			tempArray[i] = elementData[i] + secondArray[i];
 		}
 
-		return new IntArray(tempArray);
+		return new LongArray(tempArray);
 	}
 
-	public IntArray minus(int factor) {
+	public LongArray minus(long factor) {
 
 		if (factor == 0)
 			return this;
 
-		int[] tempArray = new int[elementData.length];
+		long[] tempArray = new long[elementData.length];
 		for (int i = 0; i < elementData.length; i++) {
 			tempArray[i] = elementData[i] - factor;
 		}
 
-		return new IntArray(tempArray);
+		return new LongArray(tempArray);
 	}
 
-	public IntArray minus(IntArray intArray) {
+	public LongArray minus(LongArray longArray) {
 
-		Objects.requireNonNull(intArray, "IntArray must not be null.");
-		if (elementData.length != intArray.toArray().length) {
+		Objects.requireNonNull(longArray, "LongArray must not be null.");
+		if (elementData.length != longArray.toArray().length) {
 			throw new IllegalArgumentException("Arrays must of same size.");
 		}
 
-		int[] secondArray = intArray.toArray();
-		int[] tempArray = new int[elementData.length];
+		long[] secondArray = longArray.toArray();
+		long[] tempArray = new long[elementData.length];
 		for (int i = 0; i < elementData.length; i++) {
 			tempArray[i] = elementData[i] - secondArray[i];
 		}
 
-		return new IntArray(tempArray);
+		return new LongArray(tempArray);
 	}
 
 	/**
 	 * What if factor is 0? Handle the condition.
 	 */
-	public IntArray multiply(int factor) {
+	public LongArray multiply(long factor) {
 
 		if (factor == 1)
 			return this;
 
-		int[] tempArray = new int[elementData.length];
+		long[] tempArray = new long[elementData.length];
 		for (int i = 0; i < elementData.length; i++) {
 			tempArray[i] = elementData[i] * factor;
 		}
 
-		return new IntArray(tempArray);
+		return new LongArray(tempArray);
 	}
 
-	public IntArray multiply(IntArray intArray) {
+	public LongArray multiply(LongArray longArray) {
 
-		Objects.requireNonNull(intArray, "IntArray must not be null.");
-		if (elementData.length != intArray.toArray().length) {
+		Objects.requireNonNull(longArray, "LongArray must not be null.");
+		if (elementData.length != longArray.toArray().length) {
 			throw new IllegalArgumentException("Arrays must of same size.");
 		}
 
-		int[] secondArray = intArray.toArray();
-		int[] tempArray = new int[elementData.length];
+		long[] secondArray = longArray.toArray();
+		long[] tempArray = new long[elementData.length];
 		for (int i = 0; i < elementData.length; i++) {
 			tempArray[i] = elementData[i] * secondArray[i];
 		}
 
-		return new IntArray(tempArray);
+		return new LongArray(tempArray);
 	}
 
 	/**
 	 * What if factor is 0? Handle the condition.
 	 */
-	public IntArray divide(int factor) {
+	public LongArray divide(long factor) {
 
 		if (factor == 0) {
 			throw new ArithmeticException("Division by 0 tends to INFINITY.");
@@ -289,49 +289,49 @@ public final class IntArray {
 		if (factor == 1)
 			return this;
 
-		int[] tempArray = new int[elementData.length];
+		long[] tempArray = new long[elementData.length];
 		for (int i = 0; i < elementData.length; i++) {
 			tempArray[i] = elementData[i] / factor;
 		}
 
-		return new IntArray(tempArray);
+		return new LongArray(tempArray);
 	}
 
 	/**
 	 * Handle condition if any value is 0.
 	 */
-	public IntArray divide(IntArray intArray) {
+	public LongArray divide(LongArray longArray) {
 
-		Objects.requireNonNull(intArray, "IntArray must not be null.");
-		if (elementData.length != intArray.toArray().length) {
+		Objects.requireNonNull(longArray, "LongArray must not be null.");
+		if (elementData.length != longArray.toArray().length) {
 			throw new IllegalArgumentException("Arrays must of same size.");
 		}
 
-		int[] secondArray = intArray.toArray();
-		int[] tempArray = new int[elementData.length];
+		long[] secondArray = longArray.toArray();
+		long[] tempArray = new long[elementData.length];
 		for (int i = 0; i < elementData.length; i++) {
 			tempArray[i] = elementData[i] / secondArray[i];
 		}
 
-		return new IntArray(tempArray);
+		return new LongArray(tempArray);
 	}
 
-	public IntArray merge(IntArray intArray, IntBinaryOperator intBinaryOperator) {
+	public LongArray merge(LongArray longArray, LongBinaryOperator longBinaryOperator) {
 
-		Objects.requireNonNull(intArray);
-		Objects.requireNonNull(intBinaryOperator);
+		Objects.requireNonNull(longArray);
+		Objects.requireNonNull(longBinaryOperator);
 
-		if (elementData.length != intArray.toArray().length) {
+		if (elementData.length != longArray.toArray().length) {
 			throw new IllegalArgumentException("Both arays must be of same size");
 		}
-		int[] resultant = new int[elementData.length];
+		long[] resultant = new long[elementData.length];
 		for (int i = 0; i < elementData.length; i++) {
-			resultant[i] = intBinaryOperator.applyAsInt(elementData[i], intArray.elementData[i]);
+			resultant[i] = longBinaryOperator.applyAsLong(elementData[i], longArray.elementData[i]);
 		}
-		return new IntArray(resultant);
+		return new LongArray(resultant);
 	}
 
-	public IntArray sort() {
+	public LongArray sort() {
 
 		if (elementData.length == 0 || elementData.length == 1) {
 			return this;
@@ -341,22 +341,22 @@ public final class IntArray {
 		return this;
 	}
 
-	public IntArray distinct() {
+	public LongArray distinct() {
 
 		if (elementData.length == 0 || elementData.length == 1) {
 			return this;
 		}
 
-		int[] distinctElements = Arrays.stream(elementData).distinct().toArray();
+		long[] distinctElements = Arrays.stream(elementData).distinct().toArray();
 
-		return new IntArray(distinctElements);
+		return new LongArray(distinctElements);
 	}
-
+	
 	/**
 	 * We are modifing the array. This is allowed as array is final and not
 	 * array contents.
 	 */
-	public IntArray reverse() {
+	public LongArray reverse() {
 
 		if (elementData.length == 0 || elementData.length == 1) {
 			return this;
@@ -364,89 +364,89 @@ public final class IntArray {
 
 		int l = elementData.length;
 		for (int i = 0; i < l / 2; i++) {
-			int temp = elementData[i];
+			long temp = elementData[i];
 			elementData[i] = elementData[l - i - 1];
 			elementData[l - i - 1] = temp;
 		}
-		return new IntArray(elementData);
+		return new LongArray(elementData);
 	}
 
-	public OptionalInt max() {
+	public OptionalLong max() {
 		return reduce(Math::max);
 	}
 
-	public OptionalInt min() {
+	public OptionalLong min() {
 		return reduce(Math::min);
 	}
 
-	public OptionalInt sum() {
-		return reduce(Integer::sum);
+	public OptionalLong sum() {
+		return reduce(Long::sum);
 	}
 
-	public OptionalInt reduce(IntBinaryOperator operator) {
+	public OptionalLong reduce(LongBinaryOperator operator) {
 
 		if (elementData.length == 0) {
-			return OptionalInt.empty();
+			return OptionalLong.empty();
 		} else if (elementData.length == 1) {
-			return OptionalInt.of(elementData[0]);
+			return OptionalLong.of(elementData[0]);
 		}
 
-		int result = elementData[0];
+		long result = elementData[0];
 		for (int i = 1; i < elementData.length; i++) {
-			result = operator.applyAsInt(result, elementData[i]);
+			result = operator.applyAsLong(result, elementData[i]);
 		}
-		return OptionalInt.of(result);
+		return OptionalLong.of(result);
 	}
 
 	/**
 	 * Take from https://www.mkyong.com/java/java-how-to-join-arrays/
 	 */
-	public static IntArray addAll(int[]... elementData) {
+	public static LongArray addAll(long[]... elementData) {
 
 		Objects.requireNonNull(elementData);
 		int length = 0;
-		for (int[] array : elementData) {
+		for (long[] array : elementData) {
 			length += Objects.requireNonNull(array).length;
 		}
 
-		int[] result = new int[length];
+		long[] result = new long[length];
 
 		int offset = 0;
-		for (int[] array : elementData) {
+		for (long[] array : elementData) {
 			System.arraycopy(array, 0, result, offset, array.length);
 			offset += array.length;
 		}
 
-		return IntArray.of(result);
+		return LongArray.of(result);
 	}
 
-	public static IntArray addAll(IntArray... elementData) {
+	public static LongArray addAll(LongArray... elementData) {
 
 		Objects.requireNonNull(elementData);
 		int length = 0;
-		for (IntArray intArray : elementData) {
+		for (LongArray intArray : elementData) {
 			length += Objects.requireNonNull(intArray).toArray().length;
 		}
 
-		int[] result = new int[length];
+		long[] result = new long[length];
 
 		int offset = 0;
-		for (IntArray intArray : elementData) {
+		for (LongArray intArray : elementData) {
 			System.arraycopy(intArray.toArray(), 0, result, offset, intArray.toArray().length);
 			offset += intArray.toArray().length;
 		}
 
-		return IntArray.of(result);
+		return LongArray.of(result);
 	}
 
 	/**
 	 * Removing all elements which makes array length 0;
 	 */
-	public IntArray clear() {
-		return new IntArray(new int[] {});
+	public LongArray clear() {
+		return new LongArray(new long[] {});
 	}
 
-	public int[] toArray() {
+	public long[] toArray() {
 		return elementData;
 	}
 
@@ -458,7 +458,7 @@ public final class IntArray {
 		return size() == 0;
 	}
 
-	public boolean contains(int value) {
+	public boolean contains(long value) {
 
 		for (int i = 0; i < elementData.length; i++) {
 			if (elementData[i] == value) {
@@ -468,25 +468,25 @@ public final class IntArray {
 		return false;
 	}
 
-	public boolean contains(IntArray intArray) {
+	public boolean contains(LongArray longArray) {
 
-		Objects.requireNonNull(intArray, "IntArray must not be null");
+		Objects.requireNonNull(longArray, "LongArray must not be null");
 
-		List<Integer> resultList = Arrays.stream(elementData).boxed().collect(Collectors.toList());
-		List<Integer> secondList = Arrays.stream(intArray.toArray()).boxed().collect(Collectors.toList());
+		List<Long> resultList = Arrays.stream(elementData).boxed().collect(Collectors.toList());
+		List<Long> secondList = Arrays.stream(longArray.toArray()).boxed().collect(Collectors.toList());
 
 		return resultList.containsAll(secondList);
 	}
 
-	public boolean containsAll(IntArray intArray) {
-		return contains(intArray);
+	public boolean containsAll(LongArray LongArray) {
+		return contains(LongArray);
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + Arrays.hashCode(this.elementData);
+		result = prime * result + Arrays.hashCode(elementData);
 		return result;
 	}
 
@@ -498,20 +498,20 @@ public final class IntArray {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		IntArray other = (IntArray) obj;
+		LongArray other = (LongArray) obj;
 		if (!Arrays.equals(elementData, other.elementData))
 			return false;
 		return true;
 	}
 
-	public int get(int index) {
+	public long get(int index) {
 		if (index >= size()) {
 			throw new IndexOutOfBoundsException("Index " + index + ", Size: " + size());
 		}
 		return elementData[index];
 	}
 
-	public int indexOf(int value) {
+	public int indexOf(long value) {
 
 		for (int i = 0; i < elementData.length; i++) {
 			if (elementData[i] == value) {
@@ -522,7 +522,7 @@ public final class IntArray {
 		return -1;
 	}
 
-	public int lastIndexOf(int value) {
+	public int lastIndexOf(long value) {
 
 		for (int i = elementData.length - 1; i >= 0; i--) {
 			if (elementData[i] == value) {
@@ -533,42 +533,42 @@ public final class IntArray {
 		return -1;
 	}
 
-	public Iterator<Integer> iterator() {
-		return new IntArrayIterator(elementData);
+	public Iterator<Long> iterator() {
+		return new LongArrayIterator(elementData);
 	}
 
-	public ListIterator<Integer> listIterator() {
-		return new IntArrayListIterator(elementData, 0);
+	public ListIterator<Long> listIterator() {
+		return new LongArrayListIterator(elementData, 0);
 	}
 
-	public ListIterator<Integer> listIterator(int index) {
+	public ListIterator<Long> listIterator(int index) {
 
 		if (index < 0 || index > size()) {
 			throw new IndexOutOfBoundsException("Index: " + index);
 		}
 
-		return new IntArrayListIterator(elementData, index);
+		return new LongArrayListIterator(elementData, index);
 	}
 
-	private class IntArrayIterator implements Iterator<Integer> {
+	private class LongArrayIterator implements Iterator<Long> {
 
-		private final int[] intArray;
+		private final long[] LongArray;
 		private int cursor;
 
-		private IntArrayIterator(int[] intArray) {
-			this.intArray = intArray;
+		private LongArrayIterator(long[] LongArray) {
+			this.LongArray = LongArray;
 			cursor = 0;
 		}
 
 		@Override
 		public boolean hasNext() {
-			return cursor != intArray.length;
+			return cursor != LongArray.length;
 		}
 
 		@Override
-		public Integer next() {
+		public Long next() {
 			if (hasNext()) {
-				return Integer.valueOf(elementData[cursor++]);
+				return Long.valueOf(elementData[cursor++]);
 			}
 			throw new NoSuchElementException();
 		}
@@ -579,12 +579,12 @@ public final class IntArray {
 		}
 	}
 
-	private class IntArrayListIterator extends IntArrayIterator implements ListIterator<Integer> {
+	private class LongArrayListIterator extends LongArrayIterator implements ListIterator<Long> {
 
 		private int cursor;
 
-		private IntArrayListIterator(int[] intArray, int index) {
-			super(intArray);
+		private LongArrayListIterator(long[] LongArray, int index) {
+			super(LongArray);
 			cursor = index;
 		}
 
@@ -601,32 +601,32 @@ public final class IntArray {
 		}
 
 		@Override
-		public Integer previous() {
+		public Long previous() {
 			int i = cursor - 1;
 			if (i < 0)
 				throw new NoSuchElementException();
 
-			int[] intArray = IntArray.this.elementData;
+			long[] LongArray = LongArray.this.elementData;
 			if (i >= elementData.length)
 				throw new ConcurrentModificationException();
 			cursor = i;
-			return Integer.valueOf(intArray[i]);
+			return Long.valueOf(LongArray[i]);
 		}
 
 		@Override
-		public void set(Integer e) {
+		public void set(Long e) {
 			throw new UnsupportedOperationException("set");
 		}
 
 		@Override
-		public void add(Integer e) {
+		public void add(Long e) {
 			throw new UnsupportedOperationException("add");
 		}
 	}
 
 	@Override
 	public String toString() {
-		return "IntArray [result=" + Arrays.toString(elementData) + "]";
+		return "LongArray [result=" + Arrays.toString(elementData) + "]";
 	}
 
 }

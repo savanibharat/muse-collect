@@ -12,7 +12,7 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import com.codingopus.java.collect.LongArray;
+import com.codingopus.collect.LongArray;
 
 /**
  * Calculates min, max, mean, median, mode and range for {@code LongArray}
