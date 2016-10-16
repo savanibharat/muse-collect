@@ -1,7 +1,10 @@
 package com.codingopus.matrix;
 
 import java.util.Arrays;
+import java.util.OptionalInt;
 import java.util.Random;
+
+import com.codingopus.collect.DoubleArray;
 
 public class DoubleMatrix extends AbstractMatrixFunctions implements DoubleRealMatrix, DoubleMatrixOperations {
 
@@ -46,37 +49,19 @@ public class DoubleMatrix extends AbstractMatrixFunctions implements DoubleRealM
 	}
 
 	@Override
-	public DoubleMatrix add(double scalar) {
+	public DoubleMatrix add(double scalar, ExceptionPredicate pred) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public DoubleMatrix addUnsafe(double scalar) {
+	public DoubleMatrix subtract(double scalar, ExceptionPredicate pred) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public DoubleMatrix subtract(double scalar) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public DoubleMatrix subtractUnsafe(double scalar) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public DoubleMatrix multiply(double scalar) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public DoubleMatrix multiplyUnsafe(double scalar) {
+	public DoubleMatrix multiply(double scalar, ExceptionPredicate pred) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -88,25 +73,217 @@ public class DoubleMatrix extends AbstractMatrixFunctions implements DoubleRealM
 	}
 
 	@Override
-	public DoubleMatrix add(DoubleMatrix doubleMatrix) {
+	public DoubleMatrix add(DoubleMatrix DoubleMatrix, ExceptionPredicate pred) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public DoubleMatrix subtract(DoubleMatrix doubleMatrix) {
+	public OptionalInt addRows(ExceptionPredicate pred) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public DoubleMatrix multiply(DoubleMatrix doubleMatrix) {
+	public OptionalInt addRow(int rowNumber, ExceptionPredicate pred) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public DoubleMatrix divide(DoubleMatrix doubleMatrix) {
+	public OptionalInt addRows(int factor, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt addColumns(ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt addColumn(int columnNumber, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt addColumns(int factor, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DoubleMatrix subtract(DoubleMatrix DoubleMatrix, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt subtractRow(int rowNumber, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt subtractRows(ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt subtractRows(int factor, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt subtractColumn(int columnNumber, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt subtractColumns(ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt subtractColumns(int factor, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DoubleMatrix multiply(DoubleMatrix DoubleMatrix, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt multiplyRow(int rowNumber, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt multiplyRows(ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt multiplyRows(int factor, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt multiplyColumn(int columnNumber, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt multiplyColumns(ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt multiplyColumns(int factor, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DoubleMatrix dotProduct(DoubleMatrix DoubleMatrix) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DoubleMatrix divide(DoubleMatrix DoubleMatrix) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DoubleArray flattenMatrix() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt min() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt minRow(int row) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt minColumn(int column) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt max() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt maxRow(int row) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt maxColumn(int column) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DoubleMatrix sort() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DoubleMatrix sortRow(int row) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DoubleMatrix sortColumn(int column) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt peakToPeak() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DoubleMatrix abs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DoubleMatrix signum() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -130,13 +307,13 @@ public class DoubleMatrix extends AbstractMatrixFunctions implements DoubleRealM
 	}
 
 	@Override
-	public double[] getRowElements(int rowNumber) {
+	public DoubleArray getRowElements(int rowNumber) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public double[] getColumnElements(int columnNumber) {
+	public DoubleArray getColumnElements(int columnNumber) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -157,18 +334,6 @@ public class DoubleMatrix extends AbstractMatrixFunctions implements DoubleRealM
 	public boolean isEmptyMatrix() {
 		// TODO Auto-generated method stub
 		return false;
-	}
-
-	@Override
-	public DoubleMatrix abs() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public DoubleMatrix signum() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	public double[][] toArray() {

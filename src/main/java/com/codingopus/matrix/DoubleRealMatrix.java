@@ -1,5 +1,7 @@
 package com.codingopus.matrix;
 
+import com.codingopus.collect.DoubleArray;
+
 public interface DoubleRealMatrix {
 
 	/** Determines whether Matrix is Square matrix or not */
@@ -40,7 +42,7 @@ public interface DoubleRealMatrix {
 	 *            the row number
 	 * @return the row elements
 	 */
-	double[] getRowElements(int rowNumber);
+	DoubleArray getRowElements(int rowNumber);
 
 	/** Returns the array for specified Column else returns null */
 	/**
@@ -50,7 +52,7 @@ public interface DoubleRealMatrix {
 	 *            the column number
 	 * @return the column elements
 	 */
-	double[] getColumnElements(int columnNumber);
+	DoubleArray getColumnElements(int columnNumber);
 
 	/** Checks whether the Matrix is Row Vector or not */
 	/**

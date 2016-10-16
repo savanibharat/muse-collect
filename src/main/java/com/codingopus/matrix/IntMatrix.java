@@ -1,7 +1,10 @@
 package com.codingopus.matrix;
 
 import java.util.Arrays;
+import java.util.OptionalInt;
 import java.util.Random;
+
+import com.codingopus.collect.IntArray;
 
 public class IntMatrix extends AbstractMatrixFunctions implements IntRealMatrix, IntMatrixOperations {
 
@@ -60,18 +63,6 @@ public class IntMatrix extends AbstractMatrixFunctions implements IntRealMatrix,
 			}
 		}
 		return new IntMatrix(matrix);
-	}
-
-	@Override
-	public IntMatrix rowAddAll(ExceptionPredicate pred) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public IntMatrix rowAddAll(int factor, ExceptionPredicate pred) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
@@ -149,7 +140,6 @@ public class IntMatrix extends AbstractMatrixFunctions implements IntRealMatrix,
 			sb.append("matrix2 col: ").append(intMatrix.getColumnLength());
 			throw new IllegalArgumentException(sb.toString());
 		}
-
 	}
 
 	@Override
@@ -187,6 +177,26 @@ public class IntMatrix extends AbstractMatrixFunctions implements IntRealMatrix,
 	}
 
 	@Override
+	public IntMatrix abs() {
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < column; j++) {
+				matrix[i][j] = Math.abs(matrix[i][j]);
+			}
+		}
+		return IntMatrix.of(matrix);
+	}
+
+	@Override
+	public IntMatrix signum() {
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < column; j++) {
+				matrix[i][j] = (int) Math.signum((float) matrix[i][j]);
+			}
+		}
+		return IntMatrix.of(matrix);
+	}
+
+	@Override
 	public boolean isSquareMatrix() {
 		return row == column;
 	}
@@ -206,13 +216,13 @@ public class IntMatrix extends AbstractMatrixFunctions implements IntRealMatrix,
 	 * matrix[rowNumber][col4]
 	 */
 	@Override
-	public int[] getRowElements(int rowNumber) {
+	public IntArray getRowElements(int rowNumber) {
 		checkForRow(rowNumber);
 		int[] rows = new int[getRowLength()];
 		for (int i = 0; i < column; i++) {
 			rows[i] = matrix[rowNumber - 1][i];
 		}
-		return rows;
+		return IntArray.of(rows);
 	}
 
 	private void checkForRow(int rowNumber) {
@@ -222,7 +232,7 @@ public class IntMatrix extends AbstractMatrixFunctions implements IntRealMatrix,
 	}
 
 	@Override
-	public int[] getColumnElements(int columnNumber) {
+	public IntArray getColumnElements(int columnNumber) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -243,23 +253,183 @@ public class IntMatrix extends AbstractMatrixFunctions implements IntRealMatrix,
 	}
 
 	@Override
-	public IntMatrix abs() {
-		for (int i = 0; i < row; i++) {
-			for (int j = 0; j < column; j++) {
-				matrix[i][j] = Math.abs(matrix[i][j]);
-			}
-		}
-		return IntMatrix.of(matrix);
+	public OptionalInt addRows(ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public IntMatrix signum() {
-		for (int i = 0; i < row; i++) {
-			for (int j = 0; j < column; j++) {
-				matrix[i][j] = (int) Math.signum((float) matrix[i][j]);
-			}
-		}
-		return IntMatrix.of(matrix);
+	public OptionalInt addRow(int rowNumber, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt addRows(int factor, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt addColumns(ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt addColumn(int columnNumber, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt addColumns(int factor, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt subtractRows(ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt subtractRow(int rowNumber, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt subtractRows(int factor, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt subtractColumns(ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt subtractColumn(int columnNumber, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt subtractColumns(int factor, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt multiplyRows(ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt multiplyRow(int rowNumber, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt multiplyRows(int factor, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt multiplyColumns(ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt multiplyColumn(int columnNumber, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt multiplyColumns(int factor, ExceptionPredicate pred) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public IntMatrix dotProduct(IntMatrix intMatrix) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public IntArray flattenMatrix() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt min() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt minRow(int row) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt minColumn(int column) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt max() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt maxRow(int row) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt maxColumn(int column) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public IntMatrix sort() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public IntMatrix sortRow(int row) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public IntMatrix sortColumn(int column) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OptionalInt peakToPeak() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public int[][] toArray() {

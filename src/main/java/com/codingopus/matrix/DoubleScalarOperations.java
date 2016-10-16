@@ -2,16 +2,25 @@ package com.codingopus.matrix;
 
 public interface DoubleScalarOperations {
 
-	DoubleMatrix add(double scalar);
+	/**
+	 * Add specified value i.e. scalar to all elements to {@code DoubleMatrix}.
+	 * matrix[i][j] + scalar;
+	 * Intermediate operation.
+	 */
+	DoubleMatrix add(double scalar, ExceptionPredicate pred);
 
-	DoubleMatrix addUnsafe(double scalar);
+	/**
+	 * Subtract specified value i.e. scalar from all elements to {@code DoubleMatrix}.
+	 * matrix[i][j] - scalar;
+	 * Intermediate operation.
+	 */
+	DoubleMatrix subtract(double scalar, ExceptionPredicate pred);
 
-	DoubleMatrix subtract(double scalar);
-
-	DoubleMatrix subtractUnsafe(double scalar);
-
-	DoubleMatrix multiply(double scalar);
-
-	DoubleMatrix multiplyUnsafe(double scalar);
+	/**
+	 * Multiply specified value i.e. scalar to all elements to {@code DoubleMatrix}.
+	 * matrix[i][j] * scalar;
+	 * Intermediate operation.
+	 */
+	DoubleMatrix multiply(double scalar, ExceptionPredicate pred);
 
 }
