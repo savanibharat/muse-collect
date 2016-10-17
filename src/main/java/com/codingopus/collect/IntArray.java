@@ -244,49 +244,78 @@ public final class IntArray {
 	/**
 	 * Increments every value by 1.
 	 */
-	public IntArray plusOne() {
+	public IntArray plusOne(ExceptionPredicate exceptionPredicate) {
 
-		int[] tempArray = new int[elementData.length];
-		for (int i = 0; i < elementData.length; i++) {
-			tempArray[i] = elementData[i] + 1;
+		Objects.requireNonNull(exceptionPredicate);
+
+		if (exceptionPredicate.throwException()) {
+			return new IntArray(addExact(1));
 		}
-
-		return new IntArray(tempArray);
+		return new IntArray(addValues(1));
 	}
 
 	/**
 	 * Increments every value by specified factor.
 	 */
-	public IntArray plus(int factor) {
+	public IntArray plus(int factor, ExceptionPredicate exceptionPredicate) {
 
-		if (factor == 1)
-			return plusOne();
+		Objects.requireNonNull(exceptionPredicate);
 
-		int[] tempArray = new int[elementData.length];
-		for (int i = 0; i < elementData.length; i++) {
-			tempArray[i] = elementData[i] + factor;
+		if (exceptionPredicate.throwException()) {
+			return new IntArray(addExact(factor));
 		}
-
-		return new IntArray(tempArray);
+		return new IntArray(addValues(factor));
 	}
 
 	/**
 	 * Adds every value from this array to value in specified array.
 	 */
-	public IntArray plus(IntArray intArray) {
+	public IntArray plus(IntArray intArray, ExceptionPredicate exceptionPredicate) {
 
 		Objects.requireNonNull(intArray, "IntArray must not be null.");
+		Objects.requireNonNull(exceptionPredicate);
+
 		if (elementData.length != intArray.toArray().length) {
 			throw new IllegalArgumentException("Arrays must of same size.");
 		}
 
 		int[] secondArray = intArray.toArray();
 		int[] tempArray = new int[elementData.length];
-		for (int i = 0; i < elementData.length; i++) {
-			tempArray[i] = elementData[i] + secondArray[i];
-		}
 
+		if (exceptionPredicate.throwException()) {
+			for (int i = 0; i < elementData.length; i++) {
+				tempArray[i] = Math.addExact(elementData[i], secondArray[i]);
+			}
+			return new IntArray(tempArray);
+		}
+		for (int i = 0; i < elementData.length; i++) {
+			tempArray[i] = Math.addExact(elementData[i], secondArray[i]);
+		}
 		return new IntArray(tempArray);
+	}
+
+	private int[] addExact(int factor) {
+		return Arrays.stream(elementData).map(val -> Math.addExact(val, factor)).toArray();
+	}
+
+	private int[] addValues(int factor) {
+		return Arrays.stream(elementData).map(val -> Integer.sum(val, factor)).toArray();
+	}
+
+	private int[] subtractExact(int factor) {
+		return Arrays.stream(elementData).map(val -> Math.subtractExact(val, factor)).toArray();
+	}
+
+	private int[] subtractValues(int factor) {
+		return Arrays.stream(elementData).map(val -> (val - factor)).toArray();
+	}
+
+	private int[] multiplyExact(int factor) {
+		return Arrays.stream(elementData).map(val -> Math.multiplyExact(val, factor)).toArray();
+	}
+
+	private int[] multiplyValues(int factor) {
+		return Arrays.stream(elementData).map(val -> (val * factor)).toArray();
 	}
 
 	public IntArray minus(int factor) {
@@ -942,11 +971,11 @@ public final class IntArray {
 	}
 
 	public int[] toArray() {
-		if(elementData.length == 0){
-			return new int[]{};
+		if (elementData.length == 0) {
+			return new int[] {};
 		}
 		int[] copy = new int[elementData.length];
-        System.arraycopy(elementData, 0, copy, 0,elementData.length);
+		System.arraycopy(elementData, 0, copy, 0, elementData.length);
 		return copy;
 	}
 

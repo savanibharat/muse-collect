@@ -119,16 +119,16 @@ public class IntArrayTest {
 
 	@Test
 	public void intArray_plusAll() {
-		IntArray intArray = IntArray.of(1, 2, 3, 4).plusOne();
+		IntArray intArray = IntArray.of(1, 2, 3, 4).plusOne(() -> true);
 		assertArrayEquals(new int[] { 2, 3, 4, 5 }, intArray.toArray());
 	}
 
 	@Test
 	public void intArray_plus_with_factor() {
-		IntArray intArray1 = IntArray.of(1, 2, 3, 4).plus(10);
+		IntArray intArray1 = IntArray.of(1, 2, 3, 4).plus(10, () -> true);
 		assertArrayEquals(new int[] { 11, 12, 13, 14 }, intArray1.toArray());
 
-		IntArray intArray2 = IntArray.of(1, 2, 3, 4).plus(-3);
+		IntArray intArray2 = IntArray.of(1, 2, 3, 4).plus(-3, () -> true);
 		assertArrayEquals(new int[] { -2, -1, 0, 1 }, intArray2.toArray());
 	}
 
@@ -137,7 +137,7 @@ public class IntArrayTest {
 		IntArray intArray1 = IntArray.of(1, 2, 3, 4);
 		IntArray intArray2 = IntArray.of(5, 6, 7, 8);
 
-		IntArray result = intArray1.plus(intArray2);
+		IntArray result = intArray1.plus(intArray2, ()->true);
 		assertArrayEquals(new int[] { 6, 8, 10, 12 }, result.toArray());
 
 	}
@@ -145,12 +145,12 @@ public class IntArrayTest {
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void intArray_plus_with_intarray_with_different_length() {
 		IntArray intArrayShortedLength = IntArray.of(1, 2, 3);
-		intArray1.plus(intArrayShortedLength);
+		intArray1.plus(intArrayShortedLength, () -> true);
 	}
 
 	@Test(expectedExceptions = NullPointerException.class)
 	public void intArray_plus_with_intarray_with_null() {
-		IntArray.of(1, 2, 3).plus(null);
+		IntArray.of(1, 2, 3).plus(null, ()->true);
 	}
 
 	@Test
@@ -393,7 +393,7 @@ public class IntArrayTest {
 
 		IntArray intArray1 = IntArray.of(arr1).distinct();
 		IntArray intArray2 = IntArray.of(arr2).distinct();
-		IntArray intArray = intArray1.plus(intArray2);
+		IntArray intArray = intArray1.plus(intArray2, ()->true);
 
 		assertArrayEquals(new int[] { 3, 5, 7, 12 }, intArray.toArray());
 
@@ -406,7 +406,7 @@ public class IntArrayTest {
 		IntArray intArray2 = IntArray.of(1, 2, 3, 4);
 
 		// distinct, sorted, add and reverse.
-		IntArray result = intArray1.distinct().sort().plus(intArray2).reverse();
+		IntArray result = intArray1.distinct().sort().plus(intArray2, ()->true).reverse();
 		assertArrayEquals(new int[] { 14, 11, 7, 3 }, result.toArray());
 	}
 
