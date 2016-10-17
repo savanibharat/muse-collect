@@ -14,19 +14,23 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<dependencies>
+	<developers>
+		<developer>
+			<name>Bharat Savani</name>
+			<email>savanibharat@gmail.com</email>
+			<organization>Paypal, Inc.</organization>
+			<roles>
+				<role>Software Engineer, II</role>
+			</roles>
+		</developer>
+	</developers>
 
+
+	<dependencies>
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.9.10</version>
 		</dependency>
-
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-math3</artifactId>
-			<version>3.6.1</version>
-		</dependency>
-		
 	</dependencies>
 </project>
