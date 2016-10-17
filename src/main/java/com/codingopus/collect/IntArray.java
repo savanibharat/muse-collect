@@ -942,7 +942,12 @@ public final class IntArray {
 	}
 
 	public int[] toArray() {
-		return elementData;
+		if(elementData.length == 0){
+			return new int[]{};
+		}
+		int[] copy = new int[elementData.length];
+        System.arraycopy(elementData, 0, copy, 0,elementData.length);
+		return copy;
 	}
 
 	public int size() {
