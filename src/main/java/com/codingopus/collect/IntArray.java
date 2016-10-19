@@ -289,99 +289,88 @@ public final class IntArray {
 			return new IntArray(tempArray);
 		}
 		for (int i = 0; i < elementData.length; i++) {
-			tempArray[i] = Math.addExact(elementData[i], secondArray[i]);
+			tempArray[i] = elementData[i] + secondArray[i];
 		}
 		return new IntArray(tempArray);
 	}
 
-	private int[] addExact(int factor) {
-		return Arrays.stream(elementData).map(val -> Math.addExact(val, factor)).toArray();
-	}
+	public IntArray minus(int factor, ExceptionPredicate exceptionPredicate) {
 
-	private int[] addValues(int factor) {
-		return Arrays.stream(elementData).map(val -> Integer.sum(val, factor)).toArray();
-	}
+		Objects.requireNonNull(exceptionPredicate);
 
-	private int[] subtractExact(int factor) {
-		return Arrays.stream(elementData).map(val -> Math.subtractExact(val, factor)).toArray();
-	}
-
-	private int[] subtractValues(int factor) {
-		return Arrays.stream(elementData).map(val -> (val - factor)).toArray();
-	}
-
-	private int[] multiplyExact(int factor) {
-		return Arrays.stream(elementData).map(val -> Math.multiplyExact(val, factor)).toArray();
-	}
-
-	private int[] multiplyValues(int factor) {
-		return Arrays.stream(elementData).map(val -> (val * factor)).toArray();
-	}
-
-	public IntArray minus(int factor) {
-
-		if (factor == 0)
-			return this;
-
-		int[] tempArray = new int[elementData.length];
-		for (int i = 0; i < elementData.length; i++) {
-			tempArray[i] = elementData[i] - factor;
+		if (exceptionPredicate.throwException()) {
+			return new IntArray(subtractExact(factor));
 		}
-
-		return new IntArray(tempArray);
+		return new IntArray(subtractValues(factor));
 	}
 
-	public IntArray minus(IntArray intArray) {
+	public IntArray minus(IntArray intArray, ExceptionPredicate exceptionPredicate) {
 
 		Objects.requireNonNull(intArray, "IntArray must not be null.");
+		Objects.requireNonNull(exceptionPredicate);
+
 		if (elementData.length != intArray.toArray().length) {
 			throw new IllegalArgumentException("Arrays must of same size.");
 		}
 
 		int[] secondArray = intArray.toArray();
 		int[] tempArray = new int[elementData.length];
+
+		if (exceptionPredicate.throwException()) {
+			for (int i = 0; i < elementData.length; i++) {
+				tempArray[i] = Math.subtractExact(elementData[i], secondArray[i]);
+			}
+			return new IntArray(tempArray);
+		}
 		for (int i = 0; i < elementData.length; i++) {
 			tempArray[i] = elementData[i] - secondArray[i];
 		}
-
 		return new IntArray(tempArray);
 	}
 
 	/**
 	 * What if factor is 0? Handle the condition.
 	 */
-	public IntArray multiply(int factor) {
+	public IntArray multiply(int factor, ExceptionPredicate exceptionPredicate) {
 
-		if (factor == 1)
-			return this;
+		Objects.requireNonNull(exceptionPredicate);
 
-		int[] tempArray = new int[elementData.length];
-		for (int i = 0; i < elementData.length; i++) {
-			tempArray[i] = elementData[i] * factor;
+		if (exceptionPredicate.throwException()) {
+			return new IntArray(multiplyExact(factor));
 		}
-
-		return new IntArray(tempArray);
+		return new IntArray(multiplyValues(factor));
 	}
 
-	public IntArray multiply(IntArray intArray) {
+	public IntArray multiply(IntArray intArray, ExceptionPredicate exceptionPredicate) {
 
 		Objects.requireNonNull(intArray, "IntArray must not be null.");
+		Objects.requireNonNull(exceptionPredicate);
+
 		if (elementData.length != intArray.toArray().length) {
 			throw new IllegalArgumentException("Arrays must of same size.");
 		}
 
 		int[] secondArray = intArray.toArray();
 		int[] tempArray = new int[elementData.length];
+
+		if (exceptionPredicate.throwException()) {
+			for (int i = 0; i < elementData.length; i++) {
+				tempArray[i] = Math.multiplyExact(elementData[i], secondArray[i]);
+			}
+			return new IntArray(tempArray);
+		}
 		for (int i = 0; i < elementData.length; i++) {
 			tempArray[i] = elementData[i] * secondArray[i];
 		}
-
 		return new IntArray(tempArray);
+
 	}
 
-	public OptionalInt dotProductUnsafe(IntArray intArray) {
+	public OptionalInt dotProductUnsafe(IntArray intArray, ExceptionPredicate exceptionPredicate) {
 
 		Objects.requireNonNull(intArray, "IntArray must not be null.");
+		Objects.requireNonNull(exceptionPredicate);
+
 		if (elementData.length != intArray.toArray().length) {
 			throw new IllegalArgumentException("Arrays must of same size.");
 		} else if (elementData.length == 0 && intArray.size() == 0) {
@@ -390,10 +379,15 @@ public final class IntArray {
 
 		int[] secondArray = intArray.toArray();
 		int sum = 0;
-		for (int i = 0; i < elementData.length; i++) {
-			sum = sum + (elementData[i] * secondArray[i]);
+		if (exceptionPredicate.throwException()) {
+			for (int i = 0; i < elementData.length; i++) {
+				sum = sum + Math.multiplyExact(elementData[i], secondArray[i]);
+			}
+			return OptionalInt.of(sum);
 		}
-
+		for (int i = 0; i < elementData.length; i++) {
+			sum = sum + Math.multiplyExact(elementData[i], secondArray[i]);
+		}
 		return OptionalInt.of(sum);
 	}
 
@@ -1156,6 +1150,30 @@ public final class IntArray {
 	@Override
 	public String toString() {
 		return "IntArray [result=" + Arrays.toString(elementData) + "]";
+	}
+
+	private int[] addExact(int factor) {
+		return Arrays.stream(elementData).map(val -> Math.addExact(val, factor)).toArray();
+	}
+
+	private int[] addValues(int factor) {
+		return Arrays.stream(elementData).map(val -> Integer.sum(val, factor)).toArray();
+	}
+
+	private int[] subtractExact(int factor) {
+		return Arrays.stream(elementData).map(val -> Math.subtractExact(val, factor)).toArray();
+	}
+
+	private int[] subtractValues(int factor) {
+		return Arrays.stream(elementData).map(val -> (val - factor)).toArray();
+	}
+
+	private int[] multiplyExact(int factor) {
+		return Arrays.stream(elementData).map(val -> Math.multiplyExact(val, factor)).toArray();
+	}
+
+	private int[] multiplyValues(int factor) {
+		return Arrays.stream(elementData).map(val -> (val * factor)).toArray();
 	}
 
 }

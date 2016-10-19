@@ -137,7 +137,7 @@ public class IntArrayTest {
 		IntArray intArray1 = IntArray.of(1, 2, 3, 4);
 		IntArray intArray2 = IntArray.of(5, 6, 7, 8);
 
-		IntArray result = intArray1.plus(intArray2, ()->true);
+		IntArray result = intArray1.plus(intArray2, () -> true);
 		assertArrayEquals(new int[] { 6, 8, 10, 12 }, result.toArray());
 
 	}
@@ -150,15 +150,15 @@ public class IntArrayTest {
 
 	@Test(expectedExceptions = NullPointerException.class)
 	public void intArray_plus_with_intarray_with_null() {
-		IntArray.of(1, 2, 3).plus(null, ()->true);
+		IntArray.of(1, 2, 3).plus(null, () -> true);
 	}
 
 	@Test
 	public void intArray_minus_with_factor() {
-		IntArray intArray1 = IntArray.of(1, 2, 3, 4).minus(10);
+		IntArray intArray1 = IntArray.of(1, 2, 3, 4).minus(10, () -> true);
 		assertArrayEquals(new int[] { -9, -8, -7, -6 }, intArray1.toArray());
 
-		IntArray intArray2 = IntArray.of(1, 2, 3, 4).minus(-3);
+		IntArray intArray2 = IntArray.of(1, 2, 3, 4).minus(-3, () -> true);
 		assertArrayEquals(new int[] { 4, 5, 6, 7 }, intArray2.toArray());
 	}
 
@@ -167,7 +167,7 @@ public class IntArrayTest {
 		IntArray intArray1 = IntArray.of(1, 2, 3, 4);
 		IntArray intArray2 = IntArray.of(5, 6, 7, 8);
 
-		IntArray result = intArray1.minus(intArray2);
+		IntArray result = intArray1.minus(intArray2, () -> true);
 		assertArrayEquals(new int[] { -4, -4, -4, -4 }, result.toArray());
 
 	}
@@ -175,20 +175,20 @@ public class IntArrayTest {
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void intArray_minus_with_intarray_with_different_length() {
 		IntArray intArrayShortedLength = IntArray.of(1, 2, 3);
-		intArray1.minus(intArrayShortedLength);
+		intArray1.minus(intArrayShortedLength, () -> true);
 	}
 
 	@Test(expectedExceptions = NullPointerException.class)
 	public void intArray_minus_with_intarray_with_null() {
-		IntArray.of(1, 2, 3).minus(null);
+		IntArray.of(1, 2, 3).minus(null, () -> true);
 	}
 
 	@Test
 	public void intArray_multiply_with_factor() {
-		IntArray intArray1 = IntArray.of(1, 2, 3, 4).multiply(10);
+		IntArray intArray1 = IntArray.of(1, 2, 3, 4).multiply(10, () -> true);
 		assertArrayEquals(new int[] { 10, 20, 30, 40 }, intArray1.toArray());
 
-		IntArray intArray2 = IntArray.of(1, 2, 3, 4).multiply(-3);
+		IntArray intArray2 = IntArray.of(1, 2, 3, 4).multiply(-3, () -> true);
 		assertArrayEquals(new int[] { -3, -6, -9, -12 }, intArray2.toArray());
 	}
 
@@ -197,7 +197,7 @@ public class IntArrayTest {
 		IntArray intArray1 = IntArray.of(1, 2, 3, 4);
 		IntArray intArray2 = IntArray.of(5, 6, 7, 8);
 
-		IntArray result = intArray1.multiply(intArray2);
+		IntArray result = intArray1.multiply(intArray2, () -> true);
 		assertArrayEquals(new int[] { 5, 12, 21, 32 }, result.toArray());
 
 	}
@@ -205,12 +205,12 @@ public class IntArrayTest {
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void intArray_multiply_with_intarray_with_different_length() {
 		IntArray intArrayShortedLength = IntArray.of(1, 2, 3);
-		intArray1.multiply(intArrayShortedLength);
+		intArray1.multiply(intArrayShortedLength, () -> true);
 	}
 
 	@Test(expectedExceptions = NullPointerException.class)
 	public void intArray_multiply_with_intarray_with_null() {
-		IntArray.of(1, 2, 3).multiply(null);
+		IntArray.of(1, 2, 3).multiply(null, () -> true);
 	}
 
 	@Test
@@ -393,7 +393,7 @@ public class IntArrayTest {
 
 		IntArray intArray1 = IntArray.of(arr1).distinct();
 		IntArray intArray2 = IntArray.of(arr2).distinct();
-		IntArray intArray = intArray1.plus(intArray2, ()->true);
+		IntArray intArray = intArray1.plus(intArray2, () -> true);
 
 		assertArrayEquals(new int[] { 3, 5, 7, 12 }, intArray.toArray());
 
@@ -406,7 +406,7 @@ public class IntArrayTest {
 		IntArray intArray2 = IntArray.of(1, 2, 3, 4);
 
 		// distinct, sorted, add and reverse.
-		IntArray result = intArray1.distinct().sort().plus(intArray2, ()->true).reverse();
+		IntArray result = intArray1.distinct().sort().plus(intArray2, () -> true).reverse();
 		assertArrayEquals(new int[] { 14, 11, 7, 3 }, result.toArray());
 	}
 
