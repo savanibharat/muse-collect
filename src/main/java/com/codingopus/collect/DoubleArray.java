@@ -14,6 +14,7 @@ import java.util.ListIterator;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.OptionalDouble;
+import java.util.OptionalInt;
 import java.util.PriorityQueue;
 import java.util.Random;
 import java.util.Set;
@@ -310,9 +311,9 @@ public final class DoubleArray {
 
 	}
 
-	public OptionalDouble dotProductUnsafe(DoubleArray doubleArray, ExceptionPredicate exceptionPredicate) {
+	public OptionalDouble dotProduct(DoubleArray doubleArray) {
 
-		Objects.requireNonNull(doubleArray, "IntArray must not be null.");
+		Objects.requireNonNull(doubleArray, "DoubleArray must not be null.");
 
 		if (elementData.length != doubleArray.toArray().length) {
 			throw new IllegalArgumentException("Arrays must of same size.");
@@ -323,7 +324,7 @@ public final class DoubleArray {
 		double[] secondArray = doubleArray.toArray();
 		double sum = 0;
 		for (int i = 0; i < elementData.length; i++) {
-			sum = sum + (elementData[i] * secondArray[i]);
+			sum = sum + Product.multiply(elementData[i], secondArray[i]);
 		}
 		return OptionalDouble.of(sum);
 	}

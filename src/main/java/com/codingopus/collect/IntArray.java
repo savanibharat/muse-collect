@@ -35,7 +35,7 @@ public final class IntArray {
 	private final int[] elementData;
 
 	private static final IntArray EMPTY_INT_ARRAY = new IntArray(new int[] {});
-
+	private static final double[] EMPTY_DOUBLE_ARRAY = new double[]{};
 	private static final Random random = new Random();
 
 	private IntArray(final int[] input) {
@@ -366,7 +366,7 @@ public final class IntArray {
 
 	}
 
-	public OptionalInt dotProductUnsafe(IntArray intArray, ExceptionPredicate exceptionPredicate) {
+	public OptionalInt dotProduct(IntArray intArray, ExceptionPredicate exceptionPredicate) {
 
 		Objects.requireNonNull(intArray, "IntArray must not be null.");
 		Objects.requireNonNull(exceptionPredicate);
@@ -386,7 +386,7 @@ public final class IntArray {
 			return OptionalInt.of(sum);
 		}
 		for (int i = 0; i < elementData.length; i++) {
-			sum = sum + Math.multiplyExact(elementData[i], secondArray[i]);
+			sum = sum + Product.multiply(elementData[i], secondArray[i]);
 		}
 		return OptionalInt.of(sum);
 	}
@@ -435,7 +435,7 @@ public final class IntArray {
 
 	public DoubleArray sin() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.sin((double) val)).toArray();
@@ -444,7 +444,7 @@ public final class IntArray {
 
 	public DoubleArray arcsin() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.asin((double) val)).toArray();
@@ -453,7 +453,7 @@ public final class IntArray {
 
 	public DoubleArray sinh() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.sinh((double) val)).toArray();
@@ -462,7 +462,7 @@ public final class IntArray {
 
 	public DoubleArray cos() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.cos((double) val)).toArray();
@@ -471,7 +471,7 @@ public final class IntArray {
 
 	public DoubleArray arccos() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.acos((double) val)).toArray();
@@ -480,7 +480,7 @@ public final class IntArray {
 
 	public DoubleArray cosh() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.cosh((double) val)).toArray();
@@ -489,7 +489,7 @@ public final class IntArray {
 
 	public DoubleArray tan() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.tan((double) val)).toArray();
@@ -498,7 +498,7 @@ public final class IntArray {
 
 	public DoubleArray arctan() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.atan((double) val)).toArray();
@@ -507,7 +507,7 @@ public final class IntArray {
 
 	public DoubleArray tanh() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.tanh((double) val)).toArray();
@@ -516,7 +516,7 @@ public final class IntArray {
 
 	public DoubleArray toRadians() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.toRadians((double) val)).toArray();
@@ -525,7 +525,7 @@ public final class IntArray {
 
 	public DoubleArray toDegrees() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.toDegrees((double) val)).toArray();
@@ -534,7 +534,7 @@ public final class IntArray {
 
 	public DoubleArray log() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.log((double) val)).toArray();
@@ -543,7 +543,7 @@ public final class IntArray {
 
 	public DoubleArray log10() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.log10((double) val)).toArray();
@@ -552,7 +552,7 @@ public final class IntArray {
 
 	public DoubleArray log1p() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.log1p((double) val)).toArray();
@@ -561,7 +561,7 @@ public final class IntArray {
 
 	public DoubleArray sqrt() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.sqrt((double) val)).toArray();
@@ -570,7 +570,7 @@ public final class IntArray {
 
 	public DoubleArray cbrt() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.cbrt((double) val)).toArray();
@@ -579,7 +579,7 @@ public final class IntArray {
 
 	public DoubleArray ceil() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.ceil((double) val)).toArray();
@@ -588,7 +588,7 @@ public final class IntArray {
 
 	public DoubleArray floor() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.floor((double) val)).toArray();
@@ -597,7 +597,7 @@ public final class IntArray {
 
 	public DoubleArray rint() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.rint((double) val)).toArray();
@@ -606,7 +606,7 @@ public final class IntArray {
 
 	public DoubleArray pow(double exp) {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.pow((double) val, exp)).toArray();
@@ -615,7 +615,7 @@ public final class IntArray {
 
 	public DoubleArray exp() {
 		if (elementData.length == 0) {
-			return DoubleArray.of(new double[] {});
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
 		}
 
 		double[] elementDataExp = Arrays.stream(elementData).mapToDouble(val -> Math.exp((double) val)).toArray();
@@ -1173,7 +1173,7 @@ public final class IntArray {
 	}
 
 	private int[] multiplyValues(int factor) {
-		return Arrays.stream(elementData).map(val -> (val * factor)).toArray();
+		return Arrays.stream(elementData).map(val -> (Product.multiply(val, factor))).toArray();
 	}
 
 }

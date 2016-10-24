@@ -12,6 +12,13 @@ public final class Product {
 		return a * b;
 	}
 	
+	public static long multiply(long a, long b) {
+		if (a == 0 || b == 0) {
+			return 0;
+		}
+		return a * b;
+	}
+
 	public static double multiply(double a, double b) {
 		if (a == 0 || b == 0) {
 			return 0;

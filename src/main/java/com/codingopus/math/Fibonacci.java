@@ -14,6 +14,14 @@ public final class Fibonacci {
 		}
 		return generateFibonacci(n);
 	}
+	
+	public static BigInteger fibonacci(long n) {
+
+		if (n < 0) {
+			throw new IllegalArgumentException("Non-negative number.");
+		}
+		return generateFibonacci((int)n);
+	}
 
 	private static BigInteger generateFibonacci(int n) {
 		BigInteger a = BigInteger.ZERO;

@@ -1,18 +1,31 @@
 package com.codingopus.collect;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.ConcurrentModificationException;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.OptionalLong;
+import java.util.PriorityQueue;
+import java.util.Random;
+import java.util.Set;
 import java.util.function.LongBinaryOperator;
 import java.util.stream.Collectors;
+
+import com.codingopus.math.Factorial;
+import com.codingopus.math.Fibonacci;
+import com.codingopus.math.Product;
 
 /**
  * Categorize methods in Static factory, intermediate and terminal operations.
@@ -22,17 +35,19 @@ public final class LongArray {
 	private final long[] elementData;
 
 	private static final LongArray EMPTY_LONG_ARRAY = new LongArray(new long[] {});
+	private static final double[] EMPTY_DOUBLE_ARRAY = new double[] {};
+	private static final Random random = new Random();
 
 	private LongArray(final long[] input) {
 		this.elementData = input;
 	}
 
-	public static LongArray of(long a0) {
+	public static LongArray of(int a0) {
 
 		return new LongArray(new long[] { a0 });
 	}
 
-	public static LongArray of(long a0, long... an) {
+	public static LongArray of(int a0, int... an) {
 
 		Objects.requireNonNull(an);
 		long[] resultant = new long[1 + an.length];
@@ -44,7 +59,7 @@ public final class LongArray {
 		return new LongArray(resultant);
 	}
 
-	public static LongArray of(long a[]) {
+	public static LongArray of(int a[]) {
 
 		Objects.requireNonNull(a, "Input array must not be null.");
 
@@ -62,20 +77,78 @@ public final class LongArray {
 			return EMPTY_LONG_ARRAY;
 		}
 
-		long[] res = c.stream().mapToLong(val -> val.longValue()).toArray();
+		long[] res = c.stream().filter(val -> val != null).mapToLong(val -> val.longValue()).toArray();
 
 		return new LongArray(res);
 	}
 
+	public static LongArray random(int size) {
+
+		if (size < 0) {
+			throw new IllegalArgumentException("size must be >= 0");
+		}
+
+		else if (size == 0) {
+			return new LongArray(new long[] {});
+		}
+
+		long[] elementData = new long[size];
+		for (int i = 0; i < elementData.length; i++) {
+			elementData[i] = random.nextInt();
+		}
+
+		return new LongArray(elementData);
+	}
+
+	public static LongArray random(int size, Random random) {
+
+		Objects.requireNonNull(random);
+
+		if (size < 0) {
+			throw new IllegalArgumentException("size must be >= 0");
+		}
+
+		else if (size == 0) {
+			return new LongArray(new long[] {});
+		}
+
+		long[] elementData = new long[size];
+		for (int i = 0; i < elementData.length; i++) {
+			elementData[i] = random.nextInt();
+		}
+
+		return new LongArray(elementData);
+	}
+
+	public static LongArray randomWithBound(int size, Random random, int bound) {
+
+		Objects.requireNonNull(random);
+
+		if (size < 0) {
+			throw new IllegalArgumentException("size must be >= 0");
+		}
+
+		else if (size == 0) {
+			return new LongArray(new long[] {});
+		}
+
+		long[] elementData = new long[size];
+		for (int i = 0; i < elementData.length; i++) {
+			elementData[i] = random.nextInt(bound);
+		}
+
+		return new LongArray(elementData);
+	}
+
 	public static LongArray zeros(int length) {
-		return ofValue(0l, length);
+		return ofValue(0, length);
 	}
 
 	public static LongArray ones(int length) {
-		return ofValue(1l, length);
+		return ofValue(1, length);
 	}
 
-	public static LongArray ofValue(long value, int length) {
+	public static LongArray ofValue(int value, int length) {
 
 		if (length < 0) {
 			throw new IllegalArgumentException("Length cannot be negative");
@@ -90,7 +163,7 @@ public final class LongArray {
 	/**
 	 * Appends the specified element to the end of this array.
 	 */
-	public LongArray add(long value) {
+	public LongArray add(int value) {
 
 		long[] tempArray = new long[elementData.length + 1];
 		System.arraycopy(elementData, 0, tempArray, 0, elementData.length);
@@ -104,7 +177,7 @@ public final class LongArray {
 	 * Shifts the element currently at that position (if any) and any subsequent
 	 * elements to the right (adds one to their indices).
 	 */
-	public LongArray add(int index, long value) {
+	public LongArray add(int index, int value) {
 
 		if (index > size() || index < 0) {
 			throw new IndexOutOfBoundsException();
@@ -129,20 +202,20 @@ public final class LongArray {
 		if (c.size() == 0)
 			return this;
 
-		long[] tempArray = c.stream().mapToLong(val -> val.longValue()).toArray();
-		return addAll(this, LongArray.of(tempArray));
+		long[] tempArray = c.stream().filter(val -> val != null).mapToLong(val -> val.longValue()).toArray();
+		return of(this, LongArray.of(tempArray));
 	}
 
-	public IntArray toIntArray() {
+	public LongArray toLongArray() {
 
 		Objects.requireNonNull(elementData);
 
-		int[] intArray = new int[elementData.length];
+		long[] longArray = new long[elementData.length];
 		for (int i = 0; i < elementData.length; i++) {
-			intArray[i] = (int) elementData[i];
+			longArray[i] = (long) elementData[i];
 		}
 
-		return IntArray.of(intArray);
+		return LongArray.of(longArray);
 	}
 
 	public DoubleArray toDoubleArray() {
@@ -171,116 +244,157 @@ public final class LongArray {
 	/**
 	 * Increments every value by 1.
 	 */
-	public LongArray plusOne() {
+	public LongArray plusOne(ExceptionPredicate exceptionPredicate) {
 
-		long[] tempArray = new long[elementData.length];
-		for (int i = 0; i < elementData.length; i++) {
-			tempArray[i] = elementData[i] + 1L;
+		Objects.requireNonNull(exceptionPredicate);
+
+		if (exceptionPredicate.throwException()) {
+			return new LongArray(addExact(1));
 		}
-
-		return new LongArray(tempArray);
+		return new LongArray(addValues(1));
 	}
 
 	/**
 	 * Increments every value by specified factor.
 	 */
-	public LongArray plus(long factor) {
+	public LongArray plus(int factor, ExceptionPredicate exceptionPredicate) {
 
-		if (factor == 1)
-			return plusOne();
+		Objects.requireNonNull(exceptionPredicate);
 
-		long[] tempArray = new long[elementData.length];
-		for (int i = 0; i < elementData.length; i++) {
-			tempArray[i] = elementData[i] + factor;
+		if (exceptionPredicate.throwException()) {
+			return new LongArray(addExact(factor));
 		}
-
-		return new LongArray(tempArray);
+		return new LongArray(addValues(factor));
 	}
 
 	/**
 	 * Adds every value from this array to value in specified array.
 	 */
-	public LongArray plus(LongArray longArray) {
+	public LongArray plus(LongArray longArray, ExceptionPredicate exceptionPredicate) {
 
 		Objects.requireNonNull(longArray, "LongArray must not be null.");
+		Objects.requireNonNull(exceptionPredicate);
+
 		if (elementData.length != longArray.toArray().length) {
 			throw new IllegalArgumentException("Arrays must of same size.");
 		}
 
 		long[] secondArray = longArray.toArray();
 		long[] tempArray = new long[elementData.length];
+
+		if (exceptionPredicate.throwException()) {
+			for (int i = 0; i < elementData.length; i++) {
+				tempArray[i] = Math.addExact(elementData[i], secondArray[i]);
+			}
+			return new LongArray(tempArray);
+		}
 		for (int i = 0; i < elementData.length; i++) {
 			tempArray[i] = elementData[i] + secondArray[i];
 		}
-
 		return new LongArray(tempArray);
 	}
 
-	public LongArray minus(long factor) {
+	public LongArray minus(int factor, ExceptionPredicate exceptionPredicate) {
 
-		if (factor == 0)
-			return this;
+		Objects.requireNonNull(exceptionPredicate);
 
-		long[] tempArray = new long[elementData.length];
-		for (int i = 0; i < elementData.length; i++) {
-			tempArray[i] = elementData[i] - factor;
+		if (exceptionPredicate.throwException()) {
+			return new LongArray(subtractExact(factor));
 		}
-
-		return new LongArray(tempArray);
+		return new LongArray(subtractValues(factor));
 	}
 
-	public LongArray minus(LongArray longArray) {
+	public LongArray minus(LongArray LongArray, ExceptionPredicate exceptionPredicate) {
 
-		Objects.requireNonNull(longArray, "LongArray must not be null.");
-		if (elementData.length != longArray.toArray().length) {
+		Objects.requireNonNull(LongArray, "LongArray must not be null.");
+		Objects.requireNonNull(exceptionPredicate);
+
+		if (elementData.length != LongArray.toArray().length) {
 			throw new IllegalArgumentException("Arrays must of same size.");
 		}
 
-		long[] secondArray = longArray.toArray();
+		long[] secondArray = LongArray.toArray();
 		long[] tempArray = new long[elementData.length];
+
+		if (exceptionPredicate.throwException()) {
+			for (int i = 0; i < elementData.length; i++) {
+				tempArray[i] = Math.subtractExact(elementData[i], secondArray[i]);
+			}
+			return new LongArray(tempArray);
+		}
 		for (int i = 0; i < elementData.length; i++) {
 			tempArray[i] = elementData[i] - secondArray[i];
 		}
-
 		return new LongArray(tempArray);
 	}
 
 	/**
 	 * What if factor is 0? Handle the condition.
 	 */
-	public LongArray multiply(long factor) {
+	public LongArray multiply(int factor, ExceptionPredicate exceptionPredicate) {
 
-		if (factor == 1)
-			return this;
+		Objects.requireNonNull(exceptionPredicate);
 
-		long[] tempArray = new long[elementData.length];
-		for (int i = 0; i < elementData.length; i++) {
-			tempArray[i] = elementData[i] * factor;
+		if (exceptionPredicate.throwException()) {
+			return new LongArray(multiplyExact(factor));
 		}
-
-		return new LongArray(tempArray);
+		return new LongArray(multiplyValues(factor));
 	}
 
-	public LongArray multiply(LongArray longArray) {
+	public LongArray multiply(LongArray longArray, ExceptionPredicate exceptionPredicate) {
 
 		Objects.requireNonNull(longArray, "LongArray must not be null.");
+		Objects.requireNonNull(exceptionPredicate);
+
 		if (elementData.length != longArray.toArray().length) {
 			throw new IllegalArgumentException("Arrays must of same size.");
 		}
 
 		long[] secondArray = longArray.toArray();
 		long[] tempArray = new long[elementData.length];
+
+		if (exceptionPredicate.throwException()) {
+			for (int i = 0; i < elementData.length; i++) {
+				tempArray[i] = Math.multiplyExact(elementData[i], secondArray[i]);
+			}
+			return new LongArray(tempArray);
+		}
 		for (int i = 0; i < elementData.length; i++) {
-			tempArray[i] = elementData[i] * secondArray[i];
+			tempArray[i] = Product.multiply(elementData[i], secondArray[i]);
+		}
+		return new LongArray(tempArray);
+
+	}
+
+	public OptionalLong dotProduct(LongArray longArray, ExceptionPredicate exceptionPredicate) {
+
+		Objects.requireNonNull(longArray, "LongArray must not be null.");
+		Objects.requireNonNull(exceptionPredicate);
+
+		if (elementData.length != longArray.toArray().length) {
+			throw new IllegalArgumentException("Arrays must of same size.");
+		} else if (elementData.length == 0 && longArray.size() == 0) {
+			return OptionalLong.empty();
 		}
 
-		return new LongArray(tempArray);
+		long[] secondArray = longArray.toArray();
+		long sum = 0;
+		if (exceptionPredicate.throwException()) {
+			for (int i = 0; i < elementData.length; i++) {
+				sum = sum + Math.multiplyExact(elementData[i], secondArray[i]);
+			}
+			return OptionalLong.of(sum);
+		}
+		for (int i = 0; i < elementData.length; i++) {
+			sum = sum + Product.multiply(elementData[i], secondArray[i]);
+		}
+		return OptionalLong.of(sum);
 	}
 
 	/**
 	 * What if factor is 0? Handle the condition.
 	 */
-	public LongArray divide(long factor) {
+	public LongArray divide(int factor) {
 
 		if (factor == 0) {
 			throw new ArithmeticException("Division by 0 tends to INFINITY.");
@@ -310,23 +424,360 @@ public final class LongArray {
 		long[] secondArray = longArray.toArray();
 		long[] tempArray = new long[elementData.length];
 		for (int i = 0; i < elementData.length; i++) {
+			if (secondArray[i] == 0) {
+				throw new ArithmeticException("Division by 0 tends to INFINITY.");
+			}
 			tempArray[i] = elementData[i] / secondArray[i];
 		}
 
 		return new LongArray(tempArray);
 	}
 
-	public LongArray merge(LongArray longArray, LongBinaryOperator longBinaryOperator) {
+	public DoubleArray sin() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.sin((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray arcsin() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.asin((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray sinh() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.sinh((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray cos() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.cos((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray arccos() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.acos((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray cosh() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.cosh((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray tan() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.tan((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray arctan() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.atan((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray tanh() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.tanh((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray toRadians() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.toRadians((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray toDegrees() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.toDegrees((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray log() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.log((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray log10() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.log10((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray log1p() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.log1p((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray sqrt() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.sqrt((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray cbrt() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.cbrt((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray ceil() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.ceil((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray floor() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.floor((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray rint() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.rint((double) val)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray pow(double exp) {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataSin = Arrays.stream(elementData).mapToDouble(val -> Math.pow((double) val, exp)).toArray();
+		return DoubleArray.of(elementDataSin);
+	}
+
+	public DoubleArray exp() {
+		if (elementData.length == 0) {
+			return DoubleArray.of(EMPTY_DOUBLE_ARRAY);
+		}
+
+		double[] elementDataExp = Arrays.stream(elementData).mapToDouble(val -> Math.exp((double) val)).toArray();
+		return DoubleArray.of(elementDataExp);
+	}
+
+	public LongArray abs() {
+		if (elementData.length == 0) {
+			return this;
+		}
+
+		long[] elementDataAbs = Arrays.stream(elementData).map(val -> Math.abs(val)).toArray();
+		return LongArray.of(elementDataAbs);
+	}
+
+	public LongArray mod(int m) {
+		if (elementData.length == 0) {
+			return this;
+		}
+		BigInteger mod = BigInteger.valueOf((long) m);
+		for (int i = 0; i < elementData.length; i++) {
+			BigInteger bg1 = BigInteger.valueOf((long) elementData[i]);
+			elementData[i] = bg1.mod(mod).intValue();
+		}
+		return new LongArray(elementData);
+
+	}
+
+	public LongArray union(LongArray longArray) {
+		Objects.requireNonNull(longArray);
+		if (elementData.length == 0 && longArray.size() == 0) {
+			return this;
+		} else if (elementData.length != 0 && longArray.size() == 0) {
+			return this;
+		} else if (elementData.length == 0 && longArray.size() != 0) {
+			return longArray;
+		}
+
+		// both LongArray's has length > 1.
+		Set<Long> set = new HashSet<>(this.toList());
+		set.addAll(longArray.toList());
+		return LongArray.of(set);
+	}
+
+	public LongArray intersection(LongArray longArray) {
 
 		Objects.requireNonNull(longArray);
+		if (elementData.length == 0 || longArray.size() == 0) {
+			return EMPTY_LONG_ARRAY;
+		}
+
+		// both LongArray's has length > 1.
+		Set<Long> set = new HashSet<>(this.toList());
+		set.retainAll(longArray.toList());
+		return LongArray.of(set);
+	}
+
+	/**
+	 * https://docs.oracle.com/javase/tutorial/collections/interfaces/set.html
+	 */
+	public LongArray asymmetricDifference(LongArray longArray) {
+
+		Objects.requireNonNull(longArray);
+		if (elementData.length == 0 && longArray.size() == 0) {
+			return EMPTY_LONG_ARRAY;
+		} else if (elementData.length != 0 && longArray.size() == 0) {
+			return this;
+		} else if (elementData.length == 0 && longArray.size() != 0) {
+			return this;
+		}
+
+		// both LongArray's has length > 1.
+		Set<Long> set = new HashSet<>(this.toList());
+		set.removeAll(longArray.toList());
+		return LongArray.of(set);
+	}
+
+	/**
+	 * https://docs.oracle.com/javase/tutorial/collections/interfaces/set.html
+	 */
+	public LongArray symmetricDifference(LongArray longArray) {
+
+		Objects.requireNonNull(longArray);
+		if (elementData.length == 0 && longArray.size() == 0) {
+			return EMPTY_LONG_ARRAY;
+		}
+
+		List<Long> elementDataList1 = this.toList();
+		List<Long> elementDataList2 = longArray.toList();
+		Set<Long> symmetricDiff = new HashSet<Long>(elementDataList1);
+		symmetricDiff.addAll(elementDataList2);
+		Set<Long> tmp = new HashSet<Long>(elementDataList1);
+		tmp.retainAll(elementDataList2);
+		symmetricDiff.removeAll(tmp);
+		return LongArray.of(symmetricDiff);
+	}
+
+	/**
+	 * Will return nth fibonacci of value in array. For input {1, 2, 3, 4, 5, 6,
+	 * 7, 8 } result is [1, 1, 2, 3, 5, 8, 13, 21]
+	 */
+	public Collection<BigInteger> nthFibonacci() {
+		if (elementData.length == 0) {
+			return new ArrayList<>();
+		}
+
+		Collection<BigInteger> coll = Arrays.stream(elementData).mapToObj(val -> Fibonacci.fibonacci(val))
+				.collect(Collectors.toList());
+		return coll;
+	}
+
+	public OptionalLong kthLargest(int k) {
+		if (elementData.length == 0 || k <= 0) {
+			return OptionalLong.empty();
+		}
+
+		if (k > elementData.length) {
+			throw new IllegalArgumentException("return the element at index k-1 in sorted array");
+		}
+
+		PriorityQueue<Long> queue = new PriorityQueue<>(k);
+		for (int i = 0; i < elementData.length; i++) {
+			queue.offer(Long.valueOf(elementData[i]));
+
+			if (queue.size() > k) {
+				queue.poll();
+			}
+		}
+		return OptionalLong.of(queue.peek());
+	}
+
+	public OptionalLong kthSmallest(int k) {
+		if (elementData.length == 0 || k <= 0) {
+			return OptionalLong.empty();
+		}
+
+		if (k > elementData.length) {
+			throw new IllegalArgumentException("return the element at index k-1 in sorted array");
+		}
+
+		PriorityQueue<Long> queue = new PriorityQueue<>(k, Comparator.reverseOrder());
+		for (int i = 0; i < elementData.length; i++) {
+			queue.offer(Long.valueOf(elementData[i]));
+
+			if (queue.size() > k) {
+				queue.poll();
+			}
+		}
+		return OptionalLong.of(queue.peek());
+	}
+
+	public LongArray merge(LongArray LongArray, LongBinaryOperator longBinaryOperator) {
+
+		Objects.requireNonNull(LongArray);
 		Objects.requireNonNull(longBinaryOperator);
 
-		if (elementData.length != longArray.toArray().length) {
+		if (elementData.length != LongArray.toArray().length) {
 			throw new IllegalArgumentException("Both arays must be of same size");
 		}
 		long[] resultant = new long[elementData.length];
 		for (int i = 0; i < elementData.length; i++) {
-			resultant[i] = longBinaryOperator.applyAsLong(elementData[i], longArray.elementData[i]);
+			resultant[i] = longBinaryOperator.applyAsLong(elementData[i], LongArray.elementData[i]);
 		}
 		return new LongArray(resultant);
 	}
@@ -351,7 +802,7 @@ public final class LongArray {
 
 		return new LongArray(distinctElements);
 	}
-	
+
 	/**
 	 * We are modifing the array. This is allowed as array is final and not
 	 * array contents.
@@ -383,6 +834,73 @@ public final class LongArray {
 		return reduce(Long::sum);
 	}
 
+	public OptionalLong product() {
+		return reduce(Product::multiply);
+	}
+
+	public LongArray evens() {
+
+		if (elementData.length == 0) {
+			return this;
+		}
+
+		List<Long> evens = Arrays.stream(elementData).filter(NumericPredicates.LONG_EVEN).boxed()
+				.collect(Collectors.toList());
+
+		return of(evens);
+	}
+
+	public LongArray odds() {
+
+		if (elementData.length == 0) {
+			return this;
+		}
+
+		List<Long> odds = Arrays.stream(elementData).filter(NumericPredicates.LONG_ODD).boxed()
+				.collect(Collectors.toList());
+
+		return of(odds);
+	}
+
+	public LongArray shuffle() {
+		if (elementData.length == 0 || elementData.length == 1) {
+			return this;
+		}
+
+		int size = elementData.length;
+		for (int i = size; i > 1; i--) {
+			// swap(list, i-1, rnd.nextInt(i));
+
+			int val = new Random().nextInt(i);
+			long temp = elementData[i - 1];
+			elementData[i - 1] = elementData[val];
+			elementData[val] = temp;
+		}
+		return new LongArray(elementData);
+	}
+
+	public Map<Long, BigInteger> factorial() {
+
+		if (elementData.length == 0) {
+			return new HashMap<>();
+		}
+
+		Map<Long, BigInteger> map = new LinkedHashMap<>();
+		for (int i = 0; i < elementData.length; i++) {
+			map.put(Long.valueOf(elementData[i]), Factorial.of(elementData[i]));
+		}
+		return map;
+	}
+
+	public Set<LongArray> cartesianProduct(LongArray LongArray) {
+
+		Set<LongArray> list = LongArray.toList().stream()
+				.flatMap(i -> this.toList().stream().map(j -> new LongArray(new long[] { i, j })))
+				.collect(Collectors.toSet());
+
+		return list;
+	}
+
 	public OptionalLong reduce(LongBinaryOperator operator) {
 
 		if (elementData.length == 0) {
@@ -401,7 +919,7 @@ public final class LongArray {
 	/**
 	 * Take from https://www.mkyong.com/java/java-how-to-join-arrays/
 	 */
-	public static LongArray addAll(long[]... elementData) {
+	public static LongArray of(long[]... elementData) {
 
 		Objects.requireNonNull(elementData);
 		int length = 0;
@@ -420,20 +938,20 @@ public final class LongArray {
 		return LongArray.of(result);
 	}
 
-	public static LongArray addAll(LongArray... elementData) {
+	public static LongArray of(LongArray... elementData) {
 
 		Objects.requireNonNull(elementData);
 		int length = 0;
-		for (LongArray intArray : elementData) {
-			length += Objects.requireNonNull(intArray).toArray().length;
+		for (LongArray LongArray : elementData) {
+			length += Objects.requireNonNull(LongArray).toArray().length;
 		}
 
 		long[] result = new long[length];
 
 		int offset = 0;
-		for (LongArray intArray : elementData) {
-			System.arraycopy(intArray.toArray(), 0, result, offset, intArray.toArray().length);
-			offset += intArray.toArray().length;
+		for (LongArray LongArray : elementData) {
+			System.arraycopy(LongArray.toArray(), 0, result, offset, LongArray.toArray().length);
+			offset += LongArray.toArray().length;
 		}
 
 		return LongArray.of(result);
@@ -447,7 +965,12 @@ public final class LongArray {
 	}
 
 	public long[] toArray() {
-		return elementData;
+		if (elementData.length == 0) {
+			return new long[] {};
+		}
+		long[] copy = new long[elementData.length];
+		System.arraycopy(elementData, 0, copy, 0, elementData.length);
+		return copy;
 	}
 
 	public int size() {
@@ -458,7 +981,7 @@ public final class LongArray {
 		return size() == 0;
 	}
 
-	public boolean contains(long value) {
+	public boolean contains(int value) {
 
 		for (int i = 0; i < elementData.length; i++) {
 			if (elementData[i] == value) {
@@ -486,7 +1009,7 @@ public final class LongArray {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + Arrays.hashCode(elementData);
+		result = prime * result + Arrays.hashCode(this.elementData);
 		return result;
 	}
 
@@ -511,7 +1034,7 @@ public final class LongArray {
 		return elementData[index];
 	}
 
-	public int indexOf(long value) {
+	public int indexOf(int value) {
 
 		for (int i = 0; i < elementData.length; i++) {
 			if (elementData[i] == value) {
@@ -522,7 +1045,7 @@ public final class LongArray {
 		return -1;
 	}
 
-	public int lastIndexOf(long value) {
+	public int lastIndexOf(int value) {
 
 		for (int i = elementData.length - 1; i >= 0; i--) {
 			if (elementData[i] == value) {
@@ -552,17 +1075,17 @@ public final class LongArray {
 
 	private class LongArrayIterator implements Iterator<Long> {
 
-		private final long[] LongArray;
+		private final long[] longArray;
 		private int cursor;
 
 		private LongArrayIterator(long[] LongArray) {
-			this.LongArray = LongArray;
+			this.longArray = LongArray;
 			cursor = 0;
 		}
 
 		@Override
 		public boolean hasNext() {
-			return cursor != LongArray.length;
+			return cursor != longArray.length;
 		}
 
 		@Override
@@ -583,8 +1106,8 @@ public final class LongArray {
 
 		private int cursor;
 
-		private LongArrayListIterator(long[] LongArray, int index) {
-			super(LongArray);
+		private LongArrayListIterator(long[] longArray, int index) {
+			super(longArray);
 			cursor = index;
 		}
 
@@ -606,11 +1129,11 @@ public final class LongArray {
 			if (i < 0)
 				throw new NoSuchElementException();
 
-			long[] LongArray = LongArray.this.elementData;
+			long[] longArray = LongArray.this.elementData;
 			if (i >= elementData.length)
 				throw new ConcurrentModificationException();
 			cursor = i;
-			return Long.valueOf(LongArray[i]);
+			return Long.valueOf(longArray[i]);
 		}
 
 		@Override
@@ -627,6 +1150,30 @@ public final class LongArray {
 	@Override
 	public String toString() {
 		return "LongArray [result=" + Arrays.toString(elementData) + "]";
+	}
+
+	private long[] addExact(long factor) {
+		return Arrays.stream(elementData).map(val -> Math.addExact(val, factor)).toArray();
+	}
+
+	private long[] addValues(long factor) {
+		return Arrays.stream(elementData).map(val -> Long.sum(val, factor)).toArray();
+	}
+
+	private long[] subtractExact(long factor) {
+		return Arrays.stream(elementData).map(val -> Math.subtractExact(val, factor)).toArray();
+	}
+
+	private long[] subtractValues(long factor) {
+		return Arrays.stream(elementData).map(val -> (val - factor)).toArray();
+	}
+
+	private long[] multiplyExact(long factor) {
+		return Arrays.stream(elementData).map(val -> Math.multiplyExact(val, factor)).toArray();
+	}
+
+	private long[] multiplyValues(long factor) {
+		return Arrays.stream(elementData).map(val -> (Product.multiply(val, factor))).toArray();
 	}
 
 }

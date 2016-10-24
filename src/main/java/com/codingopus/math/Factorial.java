@@ -72,10 +72,10 @@ public final class Factorial {
 		factorials[30] = THIRTY;
 	}
 
-	public static BigInteger of(int n) {
+	public static BigInteger of(long n) {
 
 		if (n >= 0 && n <= 30) {
-			return factorials[n];
+			return factorials[(int)n];
 		}
 		throw new IllegalArgumentException("Needs to be implemented yet.");
 	}
